@@ -1,9 +1,27 @@
-import LogInOut from "./Pages/LogInOut";
 import React from "react";
-import "./Background.css"; // Import CSS for styling
+import "./LogInOut.css";
+import profilePic from "../assets/profile.png"; // ✅ Import the image
 
-const Background = () => {
-  return <div className="background"></div>;
+const LogInOut = () => {
+  return (
+    <div className="background">
+      {/* Player Tag */}
+      <div className="player-tag">
+        <img src={profilePic} alt="Player" className="player-icon" />
+        Player 1
+      </div>
+
+      {/* Login Box */}
+      <div className="login-box">
+        <button className="login-btn">Sign In</button>
+        <button className="login-btn">Sign Up</button>
+        <button className="login-btn">Guest</button>
+      </div>
+
+      {/* Back Button */}
+      <button className="back-btn">⬅</button>
+    </div>
+  );
 };
 
-export default Background;
+export default LogInOut;
