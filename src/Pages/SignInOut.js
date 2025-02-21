@@ -39,10 +39,13 @@ const SignInOut = () => {
         <button className="guest-button" onClick={handleGuest}>
           Guest
         </button>
+
+{/* Back Button */}
+<button className="back-btn">←</button>
+
       </div>
 
-      {/* Back Button */}
-      <button className="back-btn">←</button>
+      
     </div>
   );
 };

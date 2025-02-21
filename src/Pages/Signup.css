@@ -1,13 +1,12 @@
 body {
-    /* background: url('your-background-image.jpg') no-repeat center center fixed; */
-    background-size: cover;
-    font-family: "Arial", sans-serif;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* background: url('your-background-image.jpg') no-repeat center center fixed; */
+  background-size: cover;
+}
 
-
-
- /* Player Badge */
- .player-badge {
+/* Player Badge */
+.player-badge {
   display: flex;
   align-items: center;
   background: #ffd166;
@@ -30,83 +29,96 @@ body {
   color: #003049;
 }
 
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* .box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 150px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+} */
+.signup-form {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  align-self: auto;
+}
 
-  
-  .signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .signup-form {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
-    padding: 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
-  }
-  
-  .signup-form input {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #000;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.6);
-    font-size: 16px;
-    outline: none;
-  }
-  
-  .remember-me {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-  }
-  
-  .remember-me input {
-    margin-right: 10px;
-    transform: scale(1.2);
-  }
-  
-  .signup-button {
-    background: linear-gradient(to bottom, #ff9800, #ff6600);
-    border: none;
-    color: white;
-    font-size: 20px;
-    padding: 12px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: 0.3s ease;
-  }
-  
-  .signup-button:hover {
-    background: linear-gradient(to bottom, #ff6600, #ff4500);
-    transform: scale(1.05);
-  }
-  
+/* .signup-form {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+} */
 
-    /* Back Button */
+.signup-form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  outline: none;
+}
 
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
 
+.remember-me input {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
 
-    .back-btn {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background-color: #ffd166;
-      border: none;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
+.signup-button {
+  background: linear-gradient(to bottom, #ff9800, #ff6600);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 12px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+.signup-button:hover {
+  background: linear-gradient(to bottom, #ff6600, #ff4500);
+  transform: scale(1.05);
+}
+
+/* Back Button */
+
+.back-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ffd166;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}

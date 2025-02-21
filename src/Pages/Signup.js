@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css"; // Import the corresponding CSS file
 
+
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -14,16 +15,14 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-
- {/* Player Badge */}
- <div className="player-badge">
+      {/* Player Badge */}
+      <div className="player-badge">
         <div className="player-icon">
           <img src="monkee.png" alt="" />
         </div>
         <span className="player-name">Player 1</span>
       </div>
-
-
+<div  className="box">
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -57,9 +56,9 @@ const Signup = () => {
         <button type="submit" className="signup-button">
           Sign Up
         </button>
-
-        
       </form>
+     
+      </div>
       <button className="back-btn">←</button>
     </div>
   );

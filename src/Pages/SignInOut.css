@@ -44,7 +44,7 @@ body {
 /* Sign In/Sign Up Box */
 .signin-box {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
-  padding: 30px;
+  padding: 150px;
   border-radius: 20px;
   width: 350px;
   text-align: center;

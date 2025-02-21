@@ -6,7 +6,7 @@ import LeaderBoard from "./Pages/LeaderBoard";
 import Setting from "./Pages/Setting";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import SignInOut from "./Pages/SignInOut";  // Correct import without extra space
+import SignInOut from "./Pages/SignInOut";  // Correct import
 import Loading from "./Pages/Loading";
 
 function App() {
@@ -19,9 +19,9 @@ function App() {
         <Route path="/setting" element={<Setting />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
-        <Route path="/SignInOut" element={<SignInOut />} />
-        <Route path="/log-in-out" element={<SignInOut />} />
-        <Route path="/Loading" element={<Loading />} />
+        <Route path="/sign-in-out" element={<SignInOut />} /> {/* Ensure correct route */}
+        <Route path="/SignInOut" element={<SignInOut />} /> {/* Ensure correct route */}
+        <Route path="/loading" element={<Loading />} /> {/* Ensure correct route */}
       </Routes>
     </Router>
   );

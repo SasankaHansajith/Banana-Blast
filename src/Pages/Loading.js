@@ -12,7 +12,7 @@ export default function Loading() {
         if (oldProgress >= 100) {
           clearInterval(interval);
           setTimeout(() => {
-            navigate("/LogInOut"); // Navigate to the Login page after 5 seconds
+            navigate("/SignInOut"); // Navigate to the LogInOut page after 5 seconds
           }, 500); // Add a small delay for better UX
           return 100;
         }
