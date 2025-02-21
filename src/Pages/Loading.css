@@ -20,7 +20,7 @@
   width: 100%;
   height: 100vh;
 
-  background-image: url("../assets/Loading.png"); /* ✅ Works if inside 'src/assets/' */
+  /* background-image: url("../assets/Loading.png"); /* ✅ Works if inside 'src/assets/' */
 
   background-size: cover;
   background-position: center;

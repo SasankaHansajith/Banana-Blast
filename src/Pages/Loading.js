@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Loading.css"; // Import external CSS file
 
 export default function Loading() {
   const [progress, setProgress] = useState(0);
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress >= 100) {
           clearInterval(interval);
+          setTimeout(() => {
+            navigate("/LogInOut"); // Navigate to the Login page after 5 seconds
+          }, 500); // Add a small delay for better UX
           return 100;
         }
         return oldProgress + 2;
@@ -16,7 +21,7 @@ export default function Loading() {
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="background">
