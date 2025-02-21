@@ -1,0 +1,181 @@
+/* Background Styling */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background: url("/path-to-your-background-image.jpg") no-repeat center center/cover; */
+    position: relative;
+  }
+  
+  .player-badge {
+    display: flex;
+    align-items: center;
+    background: #ffd166;
+    padding: 8px 15px;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .player-icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+  
+  .player-name {
+    font-weight: bold;
+    color: #003049;
+  }
+  
+  /* Instructions Box */
+  .instructions-box {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    text-align: center;
+    border:  0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .instructions-box h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .instructions-box p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+  
+  /* Play Button */
+  /* .play-button {
+    background: yellow;
+    border: none;
+    font-size: 24px;
+    padding: 15px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  } */
+  
+
+   /* Back Button */
+   .play-button {
+    
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(to bottom, #ff9800, #ff6600);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+  }
+  
+  .play-button:hover {
+    background: linear-gradient(to bottom, #ff6600, #ff4500);
+    transform: scale(1.05);
+  }
+  
+
+
+
+
+
+
+  .play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Settings & Sound Mute Buttons */
+  .bottom-icons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .mute-button,
+  .settings-button {
+    background: rgb(255, 255, 255);
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  }
+  
+  .mute-button:hover,
+  .settings-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Back Button */
+  /* Back Button */
+  .back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(to bottom, #ff9800, #ff6600);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background: linear-gradient(to bottom, #ff6600, #ff4500);
+    transform: scale(1.05);
+  }
+  
+  /* Leaderboard Button */
+  .leaderboard-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: orange;
+    border: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  }
+  
+  .leaderboard-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  

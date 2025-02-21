@@ -1,0 +1,186 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #9bdc92, #defdb5);
+    color: #003049;
+  }
+  
+ /* Player Badge */
+ .player-badge {
+  display: flex;
+  align-items: center;
+  background: #ffd166;
+  padding: 8px 15px;
+  border-radius: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.player-icon img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.player-name {
+  font-weight: bold;
+  color: #003049;
+}
+
+
+
+
+  /* Settings container */
+  .settings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+    position: relative;
+  }
+  
+  Back button
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ffd166;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-button.bottom-left {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  /* Settings content */
+  .settings-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Titles */
+  .settings-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #007f5f;
+  }
+  
+  .difficulty-section h2,
+  .brightness-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Difficulty buttons */
+  .difficulty-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .difficulty-button {
+    background-color: #ffd166;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #003049;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s;
+  }
+  
+  .difficulty-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .easy {
+    background-color: #ffadad;
+  }
+  
+  .medium {
+    background-color: #fdffb6;
+  }
+  
+  .hard {
+    background-color: #9bf6ff;
+  }
+  
+  /* Brightness slider */
+  .brightness-section .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .brightness-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    background: linear-gradient(to right, #ffadad, #fdffb6, #9bf6ff);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .brightness-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffd166;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .icon {
+    font-size: 18px;
+  }
+  
+  /* Instruction text */
+  .brightness-section p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #555;
+  }
+  
+   /* Back Button */
+
+
+
+   .back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffd166;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  

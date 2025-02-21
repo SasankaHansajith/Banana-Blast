@@ -1,27 +1,37 @@
 import React from "react";
-import "./LogInOut.css";
-import profilePic from "../assets/profile.png"; // ✅ Import the image
+import { useHistory } from "react-router-dom";
+import "./Login.css";
 
-const LogInOut = () => {
+export default function Login() {
+  const history = useHistory(); // Initialize the useHistory hook
+
+  const handleSignIn = () => {
+    history.push("/log-in-out"); // Redirect to the LogInOut page
+  };
+
   return (
-    <div className="background">
-      {/* Player Tag */}
-      <div className="player-tag">
-        <img src={profilePic} alt="Player" className="player-icon" />
-        Player 1
+    <div className="login-background">
+      {/* Player Badge */}
+      <div className="player-badge">
+        <img src="../assets/monkey-icon.png" alt="Player Icon" className="player-icon" />
+        <span className="player-text">Player 1</span>
       </div>
 
       {/* Login Box */}
       <div className="login-box">
-        <button className="login-btn">Sign In</button>
-        <button className="login-btn">Sign Up</button>
-        <button className="login-btn">Guest</button>
+        <input type="text" className="login-input" placeholder="Username" />
+        <input type="password" className="login-input" placeholder="Password" />
+
+        <div className="remember-me">
+          <input type="checkbox" id="remember" />
+          <label htmlFor="remember">Remember Me</label>
+        </div>
+
+        <button className="login-btn" onClick={handleSignIn}>Sign In</button>
       </div>
 
       {/* Back Button */}
-      <button className="back-btn">⬅</button>
+      <button className="back-btn">←</button>
     </div>
   );
-};
-
-export default LogInOut;
+}

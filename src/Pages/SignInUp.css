@@ -1,0 +1,102 @@
+/* Background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background: url('your-background-image.jpg') no-repeat center center fixed; */
+    background-size: cover;
+  }
+  
+  /* Main Container */
+  .signin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  /* Player Badge */
+  .player-badge {
+    display: flex;
+    align-items: center;
+    background: #ffd166;
+    padding: 8px 15px;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .player-icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+  
+  .player-name {
+    font-weight: bold;
+    color: #003049;
+  }
+  
+  
+  
+  
+  /* Sign In/Sign Up Box */
+  .signin-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Buttons */
+  .signin-button,
+  .signup-button,
+  .guest-button {
+    background: linear-gradient(to bottom, #ffb703, #ff9100);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    width: 80%;
+    margin: 10px 0;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .signin-button:hover,
+  .signup-button:hover,
+  .guest-button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+ /* Back Button */
+
+
+
+ .back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffd166;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
