@@ -13,14 +13,19 @@ const InsPlay = () => {
   };
 
   return (
-    <div className="game-container">
-       {/* Player Badge */}
-       <div className="player-badge">
+
+    <div className="background">
+
+      {/* Player Badge */}
+      <div className="player-badge">
         <div className="player-icon">
           <img src="monkee.png" alt="" />
         </div>
         <span className="player-name">Player 1</span>
       </div>
+      
+    <div className="game-container">
+       
 
       {/* Instructions Box */}
       <div className="instructions-box">
@@ -44,10 +49,12 @@ const InsPlay = () => {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
-      <button className="back-btn">←</button>
-      <button className="leaderboard-button">LeaderBoard</button>
+      
     </div>
+    
+    {/* Navigation Buttons */}
+    <button className="back-btn">←</button>
+      <button className="leaderboard-button">LeaderBoard</button></div>
   );
 };
 

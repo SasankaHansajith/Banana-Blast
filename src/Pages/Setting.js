@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-
+ 
 import "./Setting.css";
 
 
@@ -26,7 +26,7 @@ const Settings = () => {
 
 
 
-      <button className="back-button">←</button>
+ 
       <div className="settings-content">
         <h1 className="settings-title">Settings</h1>
 
