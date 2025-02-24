@@ -1,4 +1,4 @@
-import React from "react";
+import React, {  useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignInOut.css"; // Ensure the path is correct
 
@@ -16,6 +16,13 @@ const SignInOut = () => {
   const handleGuest = () => {
     navigate("/insplay"); // Navigate to a guest page
   };
+ useEffect(() => {
+    // Apply brightness effect when the component mounts
+    const savedBrightness = localStorage.getItem("brightness");
+    if (savedBrightness) {
+      document.body.style.filter = `brightness(${savedBrightness}%)`;
+    }
+  }, []);
 
   return (
     <div className="signin-container">

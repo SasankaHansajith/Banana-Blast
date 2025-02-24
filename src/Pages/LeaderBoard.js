@@ -1,4 +1,4 @@
-import React from "react";
+import React, {  useEffect } from "react";
 import "./LeaderBoard.css";
 
 const LeaderBoard = () => {
@@ -10,12 +10,22 @@ const LeaderBoard = () => {
     { rank: 5, name: "Player 5", score: "" },
   ];
 
+   useEffect(() => {
+      // Apply brightness effect when the component mounts
+      const savedBrightness = localStorage.getItem("brightness");
+      if (savedBrightness) {
+        document.body.style.filter = `brightness(${savedBrightness}%)`;
+      }
+    }, []);
+
   return (
     <div className="leaderboard-container">
+
+<div className="leaderboard-container2">
       {/* Player Badge */}
       <div className="player-badge">
         <div className="player-icon">
-          <img src="monkee.png" alt="" />
+          <img src="" alt="" />
         </div>
         <span className="player-name">Player 1</span>
       </div>
@@ -35,8 +45,12 @@ const LeaderBoard = () => {
       </div>
 
       {/* Back Button */}
-      <button className="back-btn">←</button>
-    </div>
+      <button className="back-btn">
+      <div className="back-icon">
+          <img src="" alt="" />
+        </div>
+        </button>
+    </div> </div>
   );
 };
 

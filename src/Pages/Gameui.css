@@ -1,0 +1,200 @@
+/* body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #004d00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+   */
+  .game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    background: #ffffff00;
+    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
+  }
+
+  .game-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  padding: center;
+    width: 1340px;
+    height:924px;
+    flex-shrink: 0;
+    border-radius: 55.319px;
+    border-radius: 55.319px;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+   
+    position: absolute; /* or use fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.034);
+  
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .player-badge {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
+    padding: 20px 30px;
+    border-radius: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  
+  }
+   
+  .player-icon img {
+    /* width: 30px;
+    height: 30px;
+    margin-right: 8px; */
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    aspect-ratio: 56.55 / 49.87;
+    background: url("../assets/monkey.png") no-repeat center center;
+    background-size: contain;
+  
+  }
+  
+  .player-name {
+    color: #0A2C51;
+  
+  font-family: "Lilita One";
+  font-size: 32.354px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.647px;
+    
+    
+  }
+  /* .score-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(180deg, #ffffff18 0%, #FDC519 100%);
+    min-width: 200px;
+  }
+   */
+   .score-timer-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .timer {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-right: 15px; /* Space between timer and score */
+    min-width: 140px;
+    text-align: center;
+  }
+  
+  .score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 20px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #ffffff18 0%, #FDC519 100%);
+    min-width: 140px;
+    text-align: center;
+  }
+  
+  
+  .game-area {
+    width: 684.255px;
+    height: 590.638px;
+    border-radius: 55.319px;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(28.936px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .number-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .num-btn {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background: yellow;
+    border: 2px solid #ffa500;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .num-btn:hover {
+    background: #ffa500;
+    color: white;
+  }
+  
+  .sidebar {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .home-btn, .reset-btn {
+    width: 50px;
+    height: 50px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .home-btn:hover, .reset-btn:hover {
+    background: red;
+  }
+  

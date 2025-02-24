@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import "./Login.css";
 
 const Login = () => {
@@ -12,51 +11,51 @@ const Login = () => {
     console.log({ username, password, rememberMe });
   };
 
+  useEffect(() => {
+    // Apply brightness effect when the component mounts
+    const savedBrightness = localStorage.getItem("brightness");
+    if (savedBrightness) {
+      document.body.style.filter = `brightness(${savedBrightness}%)`;
+    }
+  }, []);
+
   return (
     <div className="login-container">
-
-      
-       {/* Player Badge */}
-       <div className="player-badge">
-        <div className="player-icon">
-          <img src="monkee.png" alt="" />
-        </div>
-        <span className="player-name">Player 1</span>
-      </div>
-
-
-      <form className="login-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <div className="remember-me">
+      <div className="login-container2">
+        <form className="login-form" onSubmit={handleSubmit}>
           <input
-            type="checkbox"
-            checked={rememberMe}
-            onChange={() => setRememberMe(!rememberMe)}
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
           />
-          <label>Remember Me</label>
-        </div>
-        <button type="submit" className="login-button">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <div className="remember-me">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={() => setRememberMe(!rememberMe)}
+            />
+            <label>Remember Me</label>
+          </div>
+          <button type="submit" className="login-button">
+            Sign In
+          </button>
+        </form>
 
-       
-
-          Sign In
+        <button className="back-btn">
+          <div className="back-icon">
+            <img src="" alt="" />
+          </div>
         </button>
-      </form>
-
-      <button className="back-btn">←</button>
+      </div>
     </div>
   );
 };

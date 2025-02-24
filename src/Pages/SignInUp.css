@@ -1,64 +1,119 @@
 /* Background */
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
-    /* background: url('./assets/Loading.png') ; */
-    background-size: cover;
-  }
-  
-  /* Main Container */
-  .signin-container {
-    display: flex;
+    /* background: url('your-background-image.jpg') no-repeat center center fixed; */
+/* background-size: cover;
+  }  */
+
+/* Main Container */
+.signin-container {
+  /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    position: relative;
-  }
+    position: relative; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background: #ffffff00;
+  background: url("../assets/a.png") lightgray 50% / cover no-repeat;
+}
+
+.signin-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: center;
+  width: 1340px;
+  height: 924px;
+  flex-shrink: 0;
+  border-radius: 55.319px;
+  border-radius: 55.319px;
+  border: 1px solid rgba(0, 0, 0, 0.068);
+
+  position: absolute; /* or use fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.034);
+
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Player Badge */
+/* .player-badge {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  align-items: center;
+  background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
+  padding: 8px 15px;
+  border-radius: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.player-icon img {
+ 
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  aspect-ratio: 56.55 / 49.87;
+  background: url("../assets/monkey.png") no-repeat center center;
+  background-size: contain;
+
+}
+
+.player-name {
+  color: #0A2C51;
+
+font-family: "Lilita One";
+font-size: 32.354px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.647px;
   
-  /* Player Badge */
-  .player-badge {
-    display: flex;
-    align-items: center;
-    background: #ffd166;
-    padding: 8px 15px;
-    border-radius: 20px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  }
   
-  .player-icon img {
-    width: 30px;
-    height: 30px;
-    margin-right: 8px;
-  }
-  
-  .player-name {
-    font-weight: bold;
-    color: #003049;
-  }
-  
-  
-  
-  
-  /* Sign In/Sign Up Box */
-  .signin-box {
-    background: rgba(255, 255, 255, 0.2);
+}
+
+   */
+
+/* Sign In/Sign Up Box */
+.signin-box {
+  /* background: rgba(255, 255, 255, 0.2);
     padding: 30px;
     border-radius: 20px;
     width: 350px;
     text-align: center;
     backdrop-filter: blur(10px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Buttons */
-  .signin-button,
-  .signup-button,
-  .guest-button {
-    background: linear-gradient(to bottom, #ffb703, #ff9100);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+
+  width: 684.255px;
+  height: 590.638px;
+  border-radius: 55.319px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(28.936px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+.signin-button,
+.signup-button,
+.guest-button {
+  /* background: linear-gradient(to bottom, #ffb703, #ff9100);
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -69,34 +124,64 @@ body {
     margin: 10px 0;
     cursor: pointer;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .signin-button:hover,
-  .signup-button:hover,
-  .guest-button:hover {
-    transform: scale(1.05);
-    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.4);
-  }
-  
- /* Back Button */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; */
 
+  width: 250px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  /* border: 4px solid #4FA30F; */
+  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #0a2c51;
+  font-family: "Lilita One";
+  font-size: 28px; /* Adjusted font size */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
 
+.signin-button:hover,
+.signup-button:hover,
+.guest-button:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.4);
+}
 
- .back-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ffd166;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
+/* Back Button */
+
+.back-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.back-icon {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  aspect-ratio: 56.55 / 49.87;
+  background: url("../assets/Back\ button.png") no-repeat center center;
+  background-size: contain;
+}
+
+.back-btn:hover {
+  background: linear-gradient(to bottom, #ff6600, #ff4500);
+  transform: scale(1.05);
+}

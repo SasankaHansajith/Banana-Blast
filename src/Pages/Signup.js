@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import "./Signup.css"; // Import the corresponding CSS file
-
+import React, { useState, useEffect } from "react";
+import "./Signup.css"; 
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -13,16 +12,27 @@ const Signup = () => {
     console.log("Signup Details:", { email, username, password, rememberMe });
   };
 
+   useEffect(() => {
+      // Apply brightness effect when the component mounts
+      const savedBrightness = localStorage.getItem("brightness");
+      if (savedBrightness) {
+        document.body.style.filter = `brightness(${savedBrightness}%)`;
+      }
+    }, []);
+
   return (
     <div className="signup-container">
-      {/* Player Badge */}
-      <div className="player-badge">
+       <div className="signup-container2">
+
+ {/* Player Badge */}
+ {/* <div className="player-badge">
         <div className="player-icon">
-          <img src="monkee.png" alt="" />
+          <img src="" alt="" />
         </div>
         <span className="player-name">Player 1</span>
-      </div>
-<div  className="box">
+      </div> */}
+        
+      <div className="backgroud-image">
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -56,11 +66,17 @@ const Signup = () => {
         <button type="submit" className="signup-button">
           Sign Up
         </button>
+
+        
       </form>
-     
-      </div>
-      <button className="back-btn">←</button>
+      <button className="back-btn">
+      <div className="back-icon">
+          <img src="" alt="" />
+        </div>
+        </button>
+
     </div>
+    </div></div>
   );
 };
 

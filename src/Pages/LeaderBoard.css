@@ -1,19 +1,44 @@
-body {
-    /* background: url('your-background-image.jpg') no-repeat center center fixed; */
+/* body {
+    background: url('your-background-image.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: "Arial", sans-serif;
   }
-  
+   */
   /* Main Leaderboard Container */
   .leaderboard-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    position: relative;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    background: #ffffff00;
+    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
   }
+    
+  .leaderboard-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  padding: center;
+    width: 1340px;
+    height:924px;
+    flex-shrink: 0;
+    border-radius: 55.319px;
+    border-radius: 55.319px;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+   
+    position: absolute; /* or use fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.034);
   
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    
+
+  }
+
+
   /* Player Badge */
   .player-badge {
     display: flex;
@@ -40,20 +65,26 @@ body {
   
   /* Leaderboard Box */
   .leaderboard-box {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
-    padding: 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
+    width: 684.255px;
+    height: 590.638px;
+    border-radius: 55.319px;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(28.936px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .leaderboard-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #ff6600;
-    margin-bottom: 20px;
+    color: #0A2C51;
+    font-family: "Lilita One";
+    font-size: 54.356px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.087px;
   }
   
   /* Leaderboard List */
@@ -61,75 +92,105 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .leaderboard-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    margin: 8px 0;
-    padding: 12px;
-    font-weight: bold;
-    border: 2px solid #003049;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Rank Circle */
-  .rank-circle {
+}
+
+.leaderboard-item {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 400px; 
+    height: 60px; 
+    border-radius: 29.787px;
+    border: 3.404px solid rgba(0, 0, 0, 0.60);
+    background: rgba(217, 217, 217, 0.36);
+    color: rgba(10, 44, 81, 0.36);
+    font-family: "Lilita One";
+    font-size: 32.354px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    padding: 0 20px; /* Add horizontal padding */
+    margin-bottom: 20px; /* Space between items */
+}
+
+/* Rank Circle */
+.rank-circle {
     background: #ff9800;
-    padding: 8px 12px;
-    border-radius: 50%;
+    padding: 10px; /* Padding for the circle */
+    border-radius: 50%; /* Make it a circle */
     font-size: 14px;
     font-weight: bold;
     color: white;
     border: 2px solid #003049;
-  }
-  
-  /* Player Name */
-  .player-name {
-    flex-grow: 1;
-    margin-left: 10px;
-    text-align: center;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    width: 30px; /* Fixed width */
+    height: 30px; /* Fixed height */
+}
+
+/* Player Name */
+.player-name {
+    flex-grow: 1; /* Allow the name to take available space */
+    margin: 0 10px; /* Add margin for spacing */
+    text-align: center; /* Center text */
     font-size: 16px;
     font-weight: bold;
     color: #003049;
-  }
-  
-  /* Score Box */
-  .score-box {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 15px 15px;
-    border-radius: 12px;
-    width: 60px;
-    text-align: center;
-    font-weight: bold;
-    border: 2px solid #003049;
-  }
-  
+}
+
+/* Score Box */
+.score-box {
+    width: 60px; /* Fixed width for score */
+    height: 40px; /* Match the height of the rank circle */
+    border-radius: 29.787px;
+    border: 3.404px solid rgba(0, 0, 0, 0.60);
+    background: rgba(217, 217, 217, 0.36);
+    color: rgba(10, 44, 81, 0.36);
+    font-family: "Lilita One";
+    font-size: 32.354px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    display: flex; /* Use flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+
   /* Back Button */
   .back-btn {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: linear-gradient(to bottom, #ff9800, #ff6600);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: 0.3s ease;
-  }
-  
-  .back-btn:hover {
-    background: linear-gradient(to bottom, #ff6600, #ff4500);
-    transform: scale(1.05);
-  }
-  
+   bottom: 20px;
+   left: 20px;
+   background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
+   border: none;
+   border-radius: 50%;
+   font-size: 24px;
+   cursor: pointer;
+   width: 100px;
+height: 100px;
+flex-shrink: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+
+   
+
+}
+.back-icon{
+
+
+ width: 100px;
+ height: 100px;
+ flex-shrink: 0;
+ aspect-ratio: 56.55 / 49.87;
+ background: url("../assets/Back\ button.png") no-repeat center center;
+ background-size: contain;
+}
+
+
+.back-btn:hover{
+  background: linear-gradient(to bottom, #ff6600, #ff4500);
+  transform: scale(1.05);
+ }

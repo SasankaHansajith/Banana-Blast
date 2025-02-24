@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 import "./InsPlay.css";
 
@@ -12,20 +12,24 @@ const InsPlay = () => {
     setIsMuted(!isMuted);
   };
 
+   useEffect(() => {
+      // Apply brightness effect when the component mounts
+      const savedBrightness = localStorage.getItem("brightness");
+      if (savedBrightness) {
+        document.body.style.filter = `brightness(${savedBrightness}%)`;
+      }
+    }, []);
+
   return (
-
-    <div className="background">
-
-      {/* Player Badge */}
-      <div className="player-badge">
+    <div className="game-container">
+       <div className="game-container2">
+       {/* Player Badge */}
+       <div className="player-badge">
         <div className="player-icon">
-          <img src="monkee.png" alt="" />
+          <img src="" alt="" />
         </div>
         <span className="player-name">Player 1</span>
       </div>
-      
-    <div className="game-container">
-       
 
       {/* Instructions Box */}
       <div className="instructions-box">
@@ -38,23 +42,51 @@ const InsPlay = () => {
         </p>
 
         {/* Play Button */}
-        <button className="play-button">▶</button>
+        <button className="play-button">
+      <div className="play-icon">
+          <img src="" alt="" />
+        </div>
+        </button>
 
         {/* Settings & Sound Mute Buttons */}
         <div className="bottom-icons">
-          <button className="mute-button" onClick={toggleSound}>
+          {/* <button className="mute-button" onClick={toggleSound}>
             {isMuted ? "🔇" : "🔊"}
-          </button>
-          <button className="settings-button">⚙</button>
+
+          </button> */}
+
+<button className="mute-button" onClick={toggleSound}>
+  <div className="mute-icon">
+    <img src={isMuted ? "../assets/SoundOff.png" : "../assets/SoundOn.png"} alt="Sound Icon" />
+  </div>
+</button>
+
+          <button className="settings-button"></button>
         </div>
+        
       </div>
 
+
       
+    
+
+      {/* Navigation Buttons */}
+
+      <button className="back-btn">
+      <div className="back-icon">
+          <img src="" alt="" />
+        </div>
+        </button>
+
+
+     
+
+
+      <button className="leaderboard-button">LeaderBoard</button>
     </div>
     
-    {/* Navigation Buttons */}
-    <button className="back-btn">←</button>
-      <button className="leaderboard-button">LeaderBoard</button></div>
+    
+    </div>
   );
 };
 
