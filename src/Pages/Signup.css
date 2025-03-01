@@ -1,97 +1,11 @@
-/* body {
-    background: url('your-background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Arial", sans-serif;
-  } */
 
+
+  .Container2 {
+
+    background: url("../assets/Frame 23rr.png") no-repeat center center;
     
-  .signup-container {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    background: #ffffff00;
-    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
-
+    
   }
-
-  .signup-container2{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-padding: center;
-    width: 1340px;
-    height:924px;
-    flex-shrink: 0;
-    border-radius: 55.319px;
-    border-radius: 55.319px;
-    border: 1px solid rgba(0, 0, 0, 0.068);
-   
-    position: absolute; /* or use fixed */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.034);
-
-box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-  }
-
-  /* .backgroud-image{
-
-    width: 1920px;
-    height: 1080px;
-    flex-shrink: 0;
-    aspect-ratio: 737/524;
-    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
-
-  } */
-
- /* Player Badge
- .player-badge {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
-  padding: 8px 15px;
-  border-radius: 30px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-
-}
-
-.player-icon img {
-
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  aspect-ratio: 56.55 / 49.87;
-  background: url("../assets/monkey.png") no-repeat center center;
-  background-size: contain;
-
-}
-
-.player-name {
-  color: #0A2C51;
-
-font-family: "Lilita One";
-font-size: 32.354px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.647px;
-  
-  
-}
- */
-
-
   
   .signup-form {
     /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));

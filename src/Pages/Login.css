@@ -1,51 +1,27 @@
-/* body {
-    background: url('your-background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Arial", sans-serif;
-  }
-   */
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    background: #ffffff00;
-    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
 
-  }
-  .login-container2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-padding: center;
-    width: 1340px;
-    height:924px;
-    flex-shrink: 0;
-    border-radius: 55.319px;
-    border-radius: 55.319px;
-    border: 1px solid rgba(0, 0, 0, 0.068);
-   
-    position: absolute; /* or use fixed */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.034);
+  .Container2 {
 
-box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+    background: url("../assets/Frame 23rr.png") no-repeat center center;
+    
+    
   }
-  
   .login-form {
-    width: 684.255px;
-    height: 590.638px;
-    border-radius: 55.319px;
-    background: rgba(255, 255, 255, 0.10);
-    box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(28.936px);
+    width: 60%; /* Scales dynamically */
+    max-width: 400px;
+    height: 60vh; /* Reduced height slightly for balance */
+    max-height: 320px;
+    border-radius: 55px;
+    /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 55%; /* Adjusted for better centering */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: rgba(255, 255, 255, 0.1); */
+    padding: 20px; /* Added padding to ensure proper spacing */
   }
   
   .login-form input {

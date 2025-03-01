@@ -34,7 +34,7 @@ const Gameui = () => {
   }, []);
 
   return (
-    <div className="game-container">
+    <div className="Container1">
 
 <div className="game-container2">
 

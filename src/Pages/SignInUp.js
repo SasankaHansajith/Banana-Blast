@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignInUp.css";
 import "../Components/Buttons.css";
+import "../Components/Container.css";
 
 
 const SignInOut = () => {
@@ -33,8 +34,8 @@ const SignInOut = () => {
   }, []);
 
   return (
-    <div className="signin-container">
-       <div className="signin-container2">
+    <div className="Container1">
+       <div className="Container2">
       {/* Player Badge */}
       <div className="player-badge">
         <div className="player-icon">

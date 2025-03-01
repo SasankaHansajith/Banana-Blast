@@ -21,7 +21,7 @@ const LeaderBoard = () => {
     }, []);
 
   return (
-    <div className="leaderboard-container">
+    <div className="Container1">
 
 <div className="leaderboard-container2">
       {/* Player Badge */}

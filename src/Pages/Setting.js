@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Setting.css";
 import "../Components/Buttons.css";
+import "../Components/Container.css";
 
 
 const Settings = () => {
@@ -26,8 +27,8 @@ const Settings = () => {
   }, [brightness]);
 
   return (
-    <div className="settings-container">
-      <div className="settings-container2">
+    <div className="Container1">
+      <div className="Container2 ">
         {/* Player Badge */}
         <div className="player-badge">
           <div className="player-icon">

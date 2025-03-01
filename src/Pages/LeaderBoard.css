@@ -1,20 +1,4 @@
-/* body {
-    background: url('your-background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Arial", sans-serif;
-  }
-   */
-  /* Main Leaderboard Container */
-  .leaderboard-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    background: #ffffff00;
-    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
-  }
-    
+
   .leaderboard-container2{
     display: flex;
     justify-content: center;

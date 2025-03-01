@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css"; 
 import "../Components/Buttons.css";
+import "../Components/Container.css";
 
 
 const Signup = () => {
@@ -15,7 +16,7 @@ const Signup = () => {
   };
 
    useEffect(() => {
-      // Apply brightness effect when the component mounts
+      
       const savedBrightness = localStorage.getItem("brightness");
       if (savedBrightness) {
         document.body.style.filter = `brightness(${savedBrightness}%)`;
@@ -23,17 +24,10 @@ const Signup = () => {
     }, []);
 
   return (
-    <div className="signup-container">
-       <div className="signup-container2">
+    <div className="Container1">
+       <div className="Container2">
 
- {/* Player Badge */}
- {/* <div className="player-badge">
-        <div className="player-icon">
-          <img src="" alt="" />
-        </div>
-        <span className="player-name">Player 1</span>
-      </div> */}
-        
+
       <div className="backgroud-image">
       <form className="signup-form" onSubmit={handleSubmit}>
         <input

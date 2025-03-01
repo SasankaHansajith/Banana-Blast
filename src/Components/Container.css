@@ -1,0 +1,25 @@
+.Container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* Makes sure it fits the full viewport */
+  height: 100vh;
+  background: url("../assets/a.png") center center / cover no-repeat;
+}
+
+
+.Container2 {
+  width: 90vw; 
+  max-width: 1920px; 
+  height: 90vh; 
+  max-height: 900px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}

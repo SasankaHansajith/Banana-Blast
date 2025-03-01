@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 import "../Pages/InsPlay.css";
 import "../Components/Buttons.css";
+import "../Components/Container.css";
+
 
 const InsPlay = () => {
 
@@ -22,15 +24,12 @@ const InsPlay = () => {
     }, []);
 
   return (
-    <div className="game-container">
-       <div className="game-container2">
-       {/* Player Badge */}
-       <div className="player-badge">
-        <div className="player-icon">
-          <img src="" alt="" />
-        </div>
-        <span className="player-name">Player 1</span>
-      </div>
+    <div className="Container1">
+       <div className="Container2">
+
+       <div className="player-baddge">
+  <span className="player-namme">Player 1</span>
+</div>
 
       {/* Instructions Box */}
       <div className="instructions-box">

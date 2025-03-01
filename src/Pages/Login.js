@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 import "../Components/Buttons.css";
+import "../Components/Container.css";
 
 
 const Login = () => {
@@ -22,8 +23,8 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="login-container">
-      <div className="login-container2">
+    <div className="Container1">
+      <div className="Container2">
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
