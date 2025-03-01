@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignInOut.css";
+import "./SignInUp.css";
 
 const SignInOut = () => {
   const navigate = useNavigate();
@@ -32,6 +32,7 @@ const SignInOut = () => {
 
   return (
     <div className="signin-container">
+       <div className="signin-container2">
       {/* Player Badge */}
       <div className="player-badge">
         <div className="player-icon">
@@ -57,7 +58,7 @@ const SignInOut = () => {
           ←
         </button>
       </div>
-    </div>
+    </div> </div>
   );
 };
 

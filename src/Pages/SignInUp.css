@@ -21,7 +21,7 @@
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
   background: #ffffff00;
-  background: url("../assets/a.png") lightgray 50% / cover no-repeat;
+  background: url("../assets/Back.jpeg") lightgray 50% / cover no-repeat;
 }
 
 .signin-container2 {
@@ -36,11 +36,10 @@
   border-radius: 55.319px;
   border: 1px solid rgba(0, 0, 0, 0.068);
 
-  position: absolute; /* or use fixed */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.034);
 
   box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
 }

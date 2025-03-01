@@ -6,7 +6,7 @@ import LeaderBoard from "./Pages/LeaderBoard";
 import Setting from "./Pages/Setting";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup"
-import SignInOut from "./Pages/SignInOut" ;
+import SignInUp from "./Pages/SignInUp" ;
 import Gameui from "./Pages/Gameui" ;
 
 
@@ -24,7 +24,7 @@ function App() {
         <Route path="/Gameui" element={<Gameui/>} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup/>} />
-        <Route path="/SignInOut" element={<SignInOut/>} />
+        <Route path="/SignInUp" element={<SignInUp/>} />
       </Routes>
     </Router>
   );

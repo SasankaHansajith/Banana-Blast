@@ -1,48 +1,45 @@
 /* Background Styling */
 .game-container {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    background: #ffffff00;
-    background: url("../assets/a.png") lightgray 50% / cover no-repeat;
-
-  }
-  .game-container2{
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background: #ffffff00;
+  background: url("../assets/a.png") lightgray 50% / cover no-repeat;
+}
+.game-container2 {
   display: flex;
   justify-content: center;
   align-items: center;
-padding: center;
+  padding: center;
   width: 1340px;
-  height:924px;
+  height: 924px;
   flex-shrink: 0;
   border-radius: 55.319px;
   border-radius: 55.319px;
   border: 1px solid rgba(0, 0, 0, 0.068);
- 
+
   position: absolute; /* or use fixed */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.034);
 
-box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-  
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
 }
 .player-badge {
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
+  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
   padding: 20px 30px;
   border-radius: 30px;
   position: absolute;
   top: 20px;
   left: 20px;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-
 }
- 
+
 .player-icon img {
   /* width: 30px;
   height: 30px;
@@ -53,63 +50,60 @@ box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
   aspect-ratio: 56.55 / 49.87;
   background: url("../assets/monkey.png") no-repeat center center;
   background-size: contain;
-
 }
 
 .player-name {
-  color: #0A2C51;
+  color: #0a2c51;
 
-font-family: "Lilita One";
-font-size: 32.354px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.647px;
-  
-  
+  font-family: "Lilita One";
+  font-size: 32.354px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.647px;
 }
-  /* Instructions Box */
-  .instructions-box {
-    width: 684.255px;
-    height: 590.638px;
-    border-radius: 55.319px;
-    background: rgba(255, 255, 255, 0.10);
-    box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(28.936px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .instructions-box h2 {
-    color: #0A2C51;
-font-family: "Lilita One";
-font-size: 64px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -1.28px;
-  }
-  
-  .instructions-box p {
-    width: 633px;
-    height: 182px;
-    flex-shrink: 0;
+/* Instructions Box */
+.instructions-box {
+  width: 684.255px;
+  height: 590.638px;
+  border-radius: 55.319px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(28.936px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    color: rgba(10, 44, 81, 0.88);
-    
-    text-align: center;
-    font-family: "Lilita One";
-    font-size: 39.75px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 104%; /* 41.34px */
-    letter-spacing: -0.795px;
-  }
-  
-  /* Play Button */
-  /* .play-button {
+.instructions-box h2 {
+  color: #0a2c51;
+  font-family: "Lilita One";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -1.28px;
+}
+
+.instructions-box p {
+  width: 633px;
+  height: 182px;
+  flex-shrink: 0;
+
+  color: rgba(10, 44, 81, 0.88);
+
+  text-align: center;
+  font-family: "Lilita One";
+  font-size: 39.75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104%; /* 41.34px */
+  letter-spacing: -0.795px;
+}
+
+/* Play Button */
+/* .play-button {
     background: yellow;
     border: none;
     font-size: 24px;
@@ -120,189 +114,173 @@ letter-spacing: -1.28px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
   } */
-  
 
-   /* Back Button */
-   .play-button {
-    
-    bottom: 20px;
-    left: 20px;
-    background: linear-gradient(to bottom, #ff9800, #ff6600);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    width: 115px;
-    height: 115px;
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: 0.3s ease;
-flex-shrink: 0;
-  }
-  
-  .play-button:hover {
-    background: linear-gradient(to bottom, #ff6600, #ff4500);
-    transform: scale(1.05);
-  }
-  
-
-
-
-
-
-
-  .play-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* Settings & Sound Mute Buttons */
-  .bottom-icons {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-  }
-  
-  .mute-button,
-  .settings-button {
-    background: rgb(255, 255, 255);
-    border: none;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-  }
-  
-  .mute-button:hover,
-  .settings-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Back Button */
-  .back-btn {
-    position: absolute;
-   bottom: 20px;
-   left: 20px;
-   background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
-   border: none;
-   border-radius: 50%;
-   font-size: 24px;
-   cursor: pointer;
-   width: 100px;
-height: 100px;
-flex-shrink: 0;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   
-   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-
-   
-
-}
-.back-icon{
-
-
- width: 100px;
- height: 100px;
- flex-shrink: 0;
- aspect-ratio: 56.55 / 49.87;
- background: url("../assets/Back\ button.png") no-repeat center center;
- background-size: contain;
+/* Back Button */
+.play-button {
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(to bottom, #ff9800, #ff6600);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: 115px;
+  height: 115px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  flex-shrink: 0;
 }
 
-
-.back-btn:hover{
+.play-button:hover {
   background: linear-gradient(to bottom, #ff6600, #ff4500);
   transform: scale(1.05);
- }
-  
-  /* Leaderboard Button */
-  .leaderboard-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
-    border: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  }
-  
-  .leaderboard-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  }
-  
-  
-  .play-button {
-    display: flex;             
-    justify-content: center;     
-    align-items: center;          
-    width: 80px;                
-    height: 80px;             
-    border: none;              
-    background-color: transparent;  
-    cursor: pointer;               
-    position: relative;            
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Settings & Sound Mute Buttons */
+.bottom-icons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+.mute-button,
+.settings-button {
+  background: rgb(255, 255, 255);
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.mute-button:hover,
+.settings-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.back-icon {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  aspect-ratio: 56.55 / 49.87;
+  background: url("../assets/Back\ button.png") no-repeat center center;
+  background-size: contain;
+}
+
+.back-btn:hover {
+  background: linear-gradient(to bottom, #ff6600, #ff4500);
+  transform: scale(1.05);
+}
+
+/* Leaderboard Button */
+.leaderboard-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.leaderboard-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
 }
 
 .play-icon {
-    background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
- 
-    padding: 11px 20px;            
-    border-radius: 15px;
- 
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-  
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    background: url("../assets/Playbt.png") no-repeat center center;
-    background-size: contain;
-    width: 50;                   
-    height: 50%;                  
-} 
+  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
+
+  padding: 11px 20px;
+  border-radius: 15px;
+
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  /* background: url("../assets/Playbt.png") no-repeat center center; */
+  background-size: contain;
+  width: 50;
+  height: 50%;
+}
 
 .settings-button {
   background: url("../assets/Settingbt.png") no-repeat center center;
-  padding: 11px 20px;            
+  padding: 11px 20px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s;
- 
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-size: contain;
-  width: 60px;               
-  height: 60px;            
-     
+  width: 60px;
+  height: 60px;
 }
 
 .mute-button {
-  display: flex; 
-  padding: 0px 0px; 
+  display: flex;
+  padding: 0px 0px;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   /* background: url("../assets/SoundOff.png") no-repeat center center;  */
-  background-size: contain; 
-  width: 60px; 
-  height: 60px; 
+  background-size: contain;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .sound-icon {
-  width: 24px; 
-  height: 24px; 
-  display: block; 
-  margin: 0 auto; 
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
 }
