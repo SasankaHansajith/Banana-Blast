@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignInUp.css";
+import "../Components/Buttons.css";
+
 
 const SignInOut = () => {
   const navigate = useNavigate();
@@ -54,9 +56,7 @@ const SignInOut = () => {
         </button>
 
         {/* Back Button */}
-        <button className="back-btn" onClick={handleBack}>
-          ←
-        </button>
+        <button className="back-bttn" onClick={handleBack}></button>
       </div>
     </div> </div>
   );

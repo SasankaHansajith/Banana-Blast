@@ -150,37 +150,3 @@ letter-spacing: -0.647px;
   transform: scale(1.05);
   box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.4);
 }
-
-/* Back Button */
-
-.back-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-}
-.back-icon {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  aspect-ratio: 56.55 / 49.87;
-  background: url("../assets/Back\ button.png") no-repeat center center;
-  background-size: contain;
-}
-
-.back-btn:hover {
-  background: linear-gradient(to bottom, #ff6600, #ff4500);
-  transform: scale(1.05);
-}

@@ -3,31 +3,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  background: #ffffff00;
-  background: url("../assets/a.png") lightgray 50% / cover no-repeat;
+  width: 100vw; /* Makes sure it fits the full viewport */
+  height: 100vh;
+  background: url("../assets/a.png") center center / cover no-repeat;
 }
-.game-container2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: center;
-  width: 1340px;
-  height: 924px;
-  flex-shrink: 0;
-  border-radius: 55.319px;
-  border-radius: 55.319px;
-  border: 1px solid rgba(0, 0, 0, 0.068);
 
-  position: absolute; /* or use fixed */
-  top: 50%;
+/* Main Game Area */
+.game-container2 {
+  width: 90%; /* Adjusts dynamically */
+  max-width: 1200px; /* Ensures it doesn't exceed this size */
+  height: 100vh; /* Adjusts dynamically based on viewport height */
+  max-height: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("../assets/Frame 23rr.png") no-repeat center center;
+  background-size: contain; /* Ensures the image fits inside without cropping */
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+/* Instructions Box - Centered Inside Game Container */
+.instructions-box {
+  width: 60%; /* Scales dynamically */
+  max-width: 400px;
+  height: 60vh; /* Reduced height slightly for balance */
+  max-height: 320px;
+  border-radius: 55px;
+  /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 55%; /* Adjusted for better centering */
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.034);
-
-  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
+  /* background: rgba(255, 255, 255, 0.1); */
+  padding: 20px; /* Added padding to ensure proper spacing */
 }
+
 .player-badge {
   display: flex;
   align-items: center;
@@ -62,90 +78,60 @@
   line-height: normal;
   letter-spacing: -0.647px;
 }
-/* Instructions Box */
-.instructions-box {
-  width: 684.255px;
-  height: 590.638px;
-  border-radius: 55.319px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(28.936px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
+/* Title Font Size Reduced */
 .instructions-box h2 {
   color: #0a2c51;
   font-family: "Lilita One";
-  font-size: 64px;
-  font-style: normal;
+  font-size: 36px; /* Reduced from 50px */
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -1.28px;
+  line-height: 1.2; /* Improved readability */
+  letter-spacing: -0.8px;
+  margin-bottom: 10px; /* Ensures spacing from the paragraph */
 }
 
+/* Paragraph Font Size Reduced */
 .instructions-box p {
-  width: 633px;
-  height: 182px;
+  width: 90%; /* Scales with container */
+  max-width: 350px;
+  height: auto; /* Allowing text to wrap naturally */
   flex-shrink: 0;
 
   color: rgba(10, 44, 81, 0.88);
-
   text-align: center;
   font-family: "Lilita One";
-  font-size: 39.75px;
-  font-style: normal;
+  font-size: 24px; /* Reduced from 39.75px */
   font-weight: 400;
-  line-height: 104%; /* 41.34px */
-  letter-spacing: -0.795px;
+  line-height: 1.3; /* Adjusted for better readability */
+  letter-spacing: -0.5px;
+  padding: 10px; /* Added padding for better spacing */
 }
 
-/* Play Button */
-/* .play-button {
-    background: yellow;
-    border: none;
-    font-size: 24px;
-    padding: 15px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-  } */
 
-/* Back Button */
 .play-button {
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(to bottom, #ff9800, #ff6600);
+  width: 250px !important; /* Ensures the size applies */
+  height: 110px !important;
+  min-width: 250px;
+  min-height: 110px;
+  background: url("../assets/Start btn.png") no-repeat center center;
+  background-size: 70% 70%; /* Ensures image covers full button */
+  background-color: transparent;
   border: none;
-  color: white;
-  font-size: 24px;
   cursor: pointer;
-  width: 115px;
-  height: 115px;
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: 0.3s ease;
-  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
 }
 
 .play-button:hover {
-  background: linear-gradient(to bottom, #ff6600, #ff4500);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-.play-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+.play-button:active {
+  transform: scale(0.95);
 }
 
-/* Settings & Sound Mute Buttons */
 .bottom-icons {
   display: flex;
   justify-content: space-between;
@@ -172,86 +158,8 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Back Button */
-.back-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-}
-.back-icon {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  aspect-ratio: 56.55 / 49.87;
-  background: url("../assets/Back\ button.png") no-repeat center center;
-  background-size: contain;
-}
 
-.back-btn:hover {
-  background: linear-gradient(to bottom, #ff6600, #ff4500);
-  transform: scale(1.05);
-}
-
-/* Leaderboard Button */
-.leaderboard-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
-  border: none;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-}
-
-.leaderboard-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.play-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
-}
-
-.play-icon {
-  background: linear-gradient(180deg, #fd7819 0%, #fdc519 100%);
-
-  padding: 11px 20px;
-  border-radius: 15px;
-
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  /* background: url("../assets/Playbt.png") no-repeat center center; */
-  background-size: contain;
-  width: 50;
-  height: 50%;
-}
 
 .settings-button {
   background: url("../assets/Settingbt.png") no-repeat center center;
@@ -283,4 +191,24 @@
   height: 24px;
   display: block;
   margin: 0 auto;
+}
+.leaderboard-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px; /* Adjust as needed */
+  height: 80px; /* Adjust as needed */
+  background: url("../assets/Leader btn.png") no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.leaderboard-button:hover {
+  transform: scale(1.08);
+}
+
+.leaderboard-button:active {
+  transform: scale(0.95);
 }

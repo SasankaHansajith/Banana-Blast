@@ -1,0 +1,26 @@
+.back-bttn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 180px; /* Adjusted for a better fit */
+    height: 80px; /* Adjusted for a better fit */
+    background: url("../assets/Back btn.png") no-repeat center center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .back-bttn:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1); /* Slight brightness effect */
+  }
+  
+  /* Click Effect */
+  .back-bttn:active {
+    transform: scale(0.95);
+    filter: brightness(0.9); /* Slight darkening on click */
+  }
+  

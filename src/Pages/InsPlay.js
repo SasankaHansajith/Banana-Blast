@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
-import "./InsPlay.css";
+import "../Pages/InsPlay.css";
+import "../Components/Buttons.css";
 
 const InsPlay = () => {
 
@@ -41,12 +42,15 @@ const InsPlay = () => {
           Are you ready?
         </p>
 
+        <button className="play-button"></button>
+
         {/* Play Button */}
-        <button className="play-button">
+        {/* <button className="play-button">
       <div className="play-icon">
           <img src="" alt="" />
         </div>
-        </button>
+        </button> */}
+        
 
         {/* Settings & Sound Mute Buttons */}
         <div className="bottom-icons">
@@ -65,24 +69,8 @@ const InsPlay = () => {
         </div>
         
       </div>
-
-
-      
-    
-
-      {/* Navigation Buttons */}
-
-      <button className="back-btn">
-      <div className="back-icon">
-          <img src="" alt="" />
-        </div>
-        </button>
-
-
-     
-
-
-      <button className="leaderboard-button">LeaderBoard</button>
+      <button className="back-bttn"></button>
+      <button className="leaderboard-button"></button>
     </div>
     
     

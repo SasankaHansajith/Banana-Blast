@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
+import "../Components/Buttons.css";
+
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -50,10 +52,7 @@ const Login = () => {
           </button>
         </form>
 
-        <button className="back-btn">
-          <div className="back-icon">
-            <img src="" alt="" />
-          </div>
+        <button className="back-bttn">
         </button>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React, {  useEffect } from "react";
 import "./LeaderBoard.css";
+import "../Components/Buttons.css";
+
 
 const LeaderBoard = () => {
   const players = [
@@ -45,11 +47,7 @@ const LeaderBoard = () => {
       </div>
 
       {/* Back Button */}
-      <button className="back-btn">
-      <div className="back-icon">
-          <img src="" alt="" />
-        </div>
-        </button>
+      <button className="back-bttn"></button>
     </div> </div>
   );
 };

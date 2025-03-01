@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css"; 
+import "../Components/Buttons.css";
+
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -69,11 +71,7 @@ const Signup = () => {
 
         
       </form>
-      <button className="back-btn">
-      <div className="back-icon">
-          <img src="" alt="" />
-        </div>
-        </button>
+      <button className="back-btn"></button>
 
     </div>
     </div></div>

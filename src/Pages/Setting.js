@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Setting.css";
+import "../Components/Buttons.css";
+
 
 const Settings = () => {
   const [brightness, setBrightness] = useState(50); // Default brightness level
@@ -64,11 +66,7 @@ const Settings = () => {
           </div>
         </div>
 
-        <button className="back-btn">
-          <div className="back-icon">
-            <img src="" alt="" />
-          </div>
-        </button>
+        <button className="back-bttn"> </button>
       </div>
     </div>
   );
