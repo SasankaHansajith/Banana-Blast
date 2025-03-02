@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Signup.css"; 
 import "../Components/Buttons.css";
 import "../Components/Container.css";
-
+import "../Components/Badge.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ const Signup = () => {
 
   return (
     <div className="Container1">
-       <div className="Container2">
+       <div className="Container22">
 
 
       <div className="backgroud-image">

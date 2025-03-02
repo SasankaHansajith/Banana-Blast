@@ -6,46 +6,6 @@
     
     
   }
- /* Player Badge */
- .player-badge {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(180deg, #FD7819 0%, #FDC519 100%);
-  padding: 20px 30px;
-  border-radius: 30px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-
-}
-
-.player-icon img {
-  /* width: 30px;
-  height: 30px;
-  margin-right: 8px; */
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  aspect-ratio: 56.55 / 49.87;
-  background: url("../assets/monkey.png") no-repeat center center;
-  background-size: contain;
-
-}
-
-.player-name {
-  color: #0A2C51;
-
-font-family: "Lilita One";
-font-size: 32.354px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.647px;
-  
-  
-}
-
 
 
 /* Add this to apply brightness effect to the game container */

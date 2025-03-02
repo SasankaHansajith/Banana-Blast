@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Setting.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
-
+import "../Components/Badge.css";
 
 const Settings = () => {
   const [brightness, setBrightness] = useState(50); // Default brightness level
@@ -28,13 +28,9 @@ const Settings = () => {
 
   return (
     <div className="Container1">
-      <div className="Container2 ">
-        {/* Player Badge */}
-        <div className="player-badge">
-          <div className="player-icon">
-            <img src="" alt="" />
-          </div>
-          <span className="player-name">Player 1</span>
+      <div className="Container22 ">
+        <div class="playerbadge">
+          <span class="playername">Player 1</span>
         </div>
 
         <div className="settings-content">

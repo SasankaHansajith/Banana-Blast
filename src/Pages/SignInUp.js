@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./SignInUp.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
-
+import "../Components/Badge.css";
 
 const SignInOut = () => {
   const navigate = useNavigate();
@@ -35,31 +35,28 @@ const SignInOut = () => {
 
   return (
     <div className="Container1">
-       <div className="Container2">
-      {/* Player Badge */}
-      <div className="player-badge">
-        <div className="player-icon">
-          <img src="monkee.png" alt="Player Icon" />
+      <div className="Container22">
+        <div class="playerbadge">
+          <span class="playername">Player 1</span>
         </div>
-        <span className="player-name">Player 1</span>
-      </div>
 
-      {/* Sign In / Sign Up Box */}
-      <div className="signin-box">
-        <button className="signin-button" onClick={handleSignIn}>
-          Sign In
-        </button>
-        <button className="signup-button" onClick={handleSignUp}>
-          Sign Up
-        </button>
-        <button className="guest-button" onClick={handleGuest}>
-          Guest
-        </button>
+        {/* Sign In / Sign Up Box */}
+        <div className="signin-box">
+          <button className="signin-button" onClick={handleSignIn}>
+            Sign In
+          </button>
+          <button className="signup-button" onClick={handleSignUp}>
+            Sign Up
+          </button>
+          <button className="guest-button" onClick={handleGuest}>
+            Guest
+          </button>
 
-        {/* Back Button */}
-        <button className="back-bttn" onClick={handleBack}></button>
-      </div>
-    </div> </div>
+          {/* Back Button */}
+          <button className="back-bttn" onClick={handleBack}></button>
+        </div>
+      </div>{" "}
+    </div>
   );
 };
 

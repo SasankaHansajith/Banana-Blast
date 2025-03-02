@@ -1,0 +1,24 @@
+.playerbadge {
+    width: 250px; /* Set badge width */
+    height: 250px; /* Set badge height */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: url("../assets/Badge.png") no-repeat center center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes it round like the image */
+   
+  }
+  
+  
+  .playername {
+    font-size: 25px; /* Adjust the font size */
+    color: #fff; /* Text color */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-left: 100px; /* Adds a shadow to the text for visibility */
+  }
+  

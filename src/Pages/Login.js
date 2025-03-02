@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Login.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
-
+import "../Components/Badge.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="Container1">
-      <div className="Container2">
+      <div className="Container22">
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
