@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
-import "../Pages/InsPlay.css";
+import "../Components/Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
 
 const InsPlay = () => {
-  const [isMuted, setIsMuted] = useState(false);
-  // const navigate = useNavigate();
-
-  const toggleSound = () => {
-    setIsMuted(!isMuted);
-  };
-
   useEffect(() => {
     // Apply brightness effect when the component mounts
     const savedBrightness = localStorage.getItem("brightness");
@@ -24,8 +17,8 @@ const InsPlay = () => {
   return (
     <div className="Container1">
       <div className="Container22">
-        <div class="playerbadge">
-          <span class="playername">Player 1</span>
+        <div className="playerbadge">
+          <span className="playername">Player 1</span>
         </div>
 
         {/* Instructions Box */}
@@ -39,35 +32,17 @@ const InsPlay = () => {
           </p>
 
           <button className="play-button"></button>
-
-          {/* Play Button */}
-          {/* <button className="play-button">
-      <div className="play-icon">
-          <img src="" alt="" />
         </div>
-        </button> */}
 
-          {/* Settings & Sound Mute Buttons */}
-          <div className="bottom-icons">
-            {/* <button className="mute-button" onClick={toggleSound}>
-            {isMuted ? "🔇" : "🔊"}
-
-          </button> */}
-
-            <button className="mute-button" onClick={toggleSound}>
-              <div className="mute-icon">
-                <img
-                  src={
-                    isMuted ? "../assets/SoundOff.png" : "../assets/SoundOn.png"
-                  }
-                  alt="Sound Icon"
-                />
-              </div>
-            </button>
-
-            <button className="settings-button"></button>
-          </div>
+        {/* Bottom Icons with Mute Button */}
+        <div className="bottom-icons">
+          <label htmlFor="mute-toggle" className="mute-buttton">
+            <input type="checkbox" id="mute-toggle" className="mute-toggle" />
+            <div className="mute-icon"></div>
+          </label>
         </div>
+
+        <button className="settings-button"></button>
         <button className="back-bttn"></button>
         <button className="leaderboard-button"></button>
       </div>

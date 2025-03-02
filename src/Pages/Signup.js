@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Signup.css"; 
+import "./Style.css"; 
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
@@ -28,7 +28,7 @@ const Signup = () => {
        <div className="Container22">
 
 
-      <div className="backgroud-image">
+     
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -51,7 +51,7 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <div className="remember-me">
+        <div className="remember-mee">
           <input
             type="checkbox"
             checked={rememberMe}
@@ -59,15 +59,13 @@ const Signup = () => {
           />
           <label>Remember Me</label>
         </div>
-        <button type="submit" className="signup-button">
-          Sign Up
-        </button>
+        <button type="submit" className="signuup-button"></button>
 
         
       </form>
-      <button className="back-btn"></button>
+      <button className="back-bttn"></button>
 
-    </div>
+  
     </div></div>
   );
 };
