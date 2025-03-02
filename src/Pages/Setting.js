@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Setting.css";
+import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
@@ -39,16 +39,15 @@ const Settings = () => {
           <div className="difficulty-section">
             <h2 className="difficulty-title">Difficulty</h2>
             <div className="difficulty-buttons">
-              <button className="difficulty-button easy">Easy</button>
-              <button className="difficulty-button medium">Medium</button>
-              <button className="difficulty-button hard">Hard</button>
+              <button className="difficulty-button easy"></button>
+              <button className="difficulty-button medium"></button>
+              <button className="difficulty-button hard"></button>
             </div>
           </div>
 
           <div className="brightness-section">
             <h2>Brightness Level</h2>
             <div className="slider-container">
-              <span className="icon">🐵</span>
               <input
                 type="range"
                 min="0"
@@ -57,7 +56,6 @@ const Settings = () => {
                 className="brightness-slider"
                 onChange={handleBrightnessChange}
               />
-              <span className="icon">🐵</span>
             </div>
             <p>Adjust the slider until the icon is easy to see.</p>
           </div>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./LeaderBoard.css";
+import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Badge.css";
 

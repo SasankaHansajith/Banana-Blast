@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Gameui.css";
+import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Badge.css";
 

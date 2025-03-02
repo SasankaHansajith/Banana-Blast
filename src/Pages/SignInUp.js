@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignInUp.css";
+import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
