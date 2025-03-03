@@ -7,7 +7,7 @@ import "../Components/Badge.css";
 const Gameui = () => {
   const [timeLeft, setTimeLeft] = useState(120); // 2 minutes countdown
   const [score] = useState(3000);
-
+ 
   useEffect(() => {
     if (timeLeft > 0) {
       const timer = setInterval(() => {
@@ -33,26 +33,19 @@ const Gameui = () => {
 
   return (
     <div className="Container1">
-      <div className="game-container2">
-        <div class="playerbadge">
-          <span class="playername">Player 1</span>
-        </div>
+       <div className="game-container2">
+      <div class="playerbadge">
+        <span class="playername">Player 1</span>
+      </div>
 
-        <div className="game-container2">
-          <div className="player-badge">
-            <div className="player-icon">
-              <img src="" alt="" />
-            </div>
-            <span className="player-name">Player 1</span>
-          </div>
-
+     
           <div className="score-timer-container">
             <div className="timer">
               Time Left: <span>{formatTime(timeLeft)}</span>
             </div>
             <div className="score">{score}</div>
           </div>
-        </div>
+        
 
         <div className="header">
           {/* Game Area */}

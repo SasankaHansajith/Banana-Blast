@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignInUp.css";
+
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
@@ -43,20 +43,14 @@ const SignInOut = () => {
 
         {/* Sign In / Sign Up Box */}
         <div className="signin-box">
-          <button className="signin-button" onClick={handleSignIn}>
-            Sign In
-          </button>
-          <button className="signup-button" onClick={handleSignUp}>
-            Sign Up
-          </button>
-          <button className="guest-button" onClick={handleGuest}>
-            Guest
-          </button>
-
-          {/* Back Button */}
-          <button className="back-bttn" onClick={handleBack}></button>
+          <button className="signin-button" onClick={handleSignIn}></button>
+          <button className="signup-button" onClick={handleSignUp}></button>
+          <button className="guest-button" onClick={handleGuest}></button>
         </div>
-      </div>{" "}
+
+        {/* Back Button */}
+        <button className="back-bttn" onClick={handleBack}></button>
+      </div>
     </div>
   );
 };

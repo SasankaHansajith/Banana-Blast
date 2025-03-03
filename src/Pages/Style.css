@@ -339,6 +339,7 @@
   
   .Container2 {
       background: url("../assets/Frame 23rr.png") no-repeat center center;
+      
     }
     
     .settings-content {
@@ -484,3 +485,192 @@
       color: #555;
     }
     
+
+
+
+
+
+  /* ==============LeaderBoard  Page =======================================================*/
+
+
+    /* Leaderboard Container */
+.leaderboard-container2 {
+  background: url("../assets/FrameL.png") no-repeat center center;
+  background-size: 70%;
+
+  width: 90vw;
+  max-width: 1920px;
+  height: 90vh;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+
+  /* Set a higher z-index to bring it to the front */
+}
+
+/* Leaderboard Box */
+.leaderboard-box {
+  width: 900px;
+  height: 450px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Light background for the box */
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25); /* Adding box shadow for depth */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 50px;
+  margin-bottom: 80px;
+}
+
+/* Leaderboard Title */
+.leaderboard-title {
+  color: #0a2c51;
+  font-family: "Lilita One";
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Leaderboard Rows (for individual player cards) */
+.leaderboard-rows {
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  width: 850px;
+}
+
+/* Each Row (for a player) */
+.leaderboard-row {
+  display: flex;
+  justify-content: space-between; /* Space out the columns */
+  align-items: center;
+  background: rgba(0, 0, 0, 0.214); /* Light background for rows */
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.51);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for rows */
+.leaderboard-row:hover {
+  background: rgba(217, 217, 217, 0.36); /* Darker on hover */
+}
+
+/* Rank Column */
+.rank-column {
+  width: 30px;
+  font-size: 30px;
+  font-family: "Lilita One", sans-serif;
+  color: #003049;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background: #ffa500;
+  border-radius: 30px;
+}
+
+/* Name Column */
+.name-column {
+  width: 50%;
+  font-size: 30px;
+  font-family: "Lilita One", sans-serif;
+  color: #003049;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Score Column */
+.score-column {
+  width: 20%;
+  font-size: 30px;
+  font-family: "Lilita One", sans-serif;
+  color: #003049;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background: #ffa500;
+  border-radius: 30px;
+}
+
+
+
+  /* ==============SignInUp Page =======================================================*/
+
+
+  .Container2 {
+    background: url("../assets/Frame 11.png") no-repeat center center;
+  }
+  
+  .signin-box {
+    width: 60%;
+    max-width: 400px;
+    height: 60vh;
+    max-height: 320px;
+    border-radius: 55px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    padding: 20px;
+  }
+  /* Buttons */
+  .signin-button,
+  .signup-button,
+  .guest-button {
+    width: 220px; /* Ensures the size applies */
+    height: 90px;
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+    margin-top: 20px;
+    border-radius: 40px;
+  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .signin-button {
+    background-image: url("../assets/Sign In.png"); /* Replace with actual image path */
+  }
+  
+  .signup-button {
+    background-image: url("../assets/SignUp.png"); /* Replace with actual image path */
+  }
+  
+  .guest-button {
+    background-image: url("../assets/Guest btn.png"); /* Replace with actual image path */
+  }
+  
+  /* Hover effect */
+  .signin-button:hover,
+  .signup-button:hover,
+  .guest-button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.601);
+  }
+  
