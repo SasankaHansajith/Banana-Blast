@@ -49,10 +49,10 @@ const Gameui = () => {
     }
   }, []);
 
-    const navigate = useNavigate();
-    const handleInsPlay = () => {
-      navigate("/InsPlay");
-    };
+  const navigate = useNavigate();
+  const handleInsPlay = () => {
+    navigate("/InsPlay");
+  };
 
   return (
     <div className="Container1">
@@ -104,7 +104,7 @@ const Gameui = () => {
               ></button>
 
               {/* Home Button */}
-              <button className="home-btn"onClick={handleInsPlay}></button>
+              <button className="home-btn" onClick={handleInsPlay}></button>
 
               {/* Restart Button */}
               <button className="restart-btn" onClick={handleRestart}></button>
