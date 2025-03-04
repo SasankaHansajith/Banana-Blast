@@ -2,17 +2,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
   background: url("../assets/a.png") center center / cover no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 
+.Container11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url("../assets/Background I.png") center center / cover no-repeat;
+  background-size: cover;
+}
 
 .Container22 {
-  background: url("../assets/Frame 23rr.png") no-repeat center center; 
-  background-size: 60%; 
-  
+  background: url("../assets/Frame 23rr.png") no-repeat center center;
+  background-size: 60%;
+
   width: 90vw;
   max-width: 1920px;
   height: 90vh;

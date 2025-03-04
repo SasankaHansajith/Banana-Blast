@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./Style.css"; 
+import { useNavigate } from "react-router-dom";
+import "./Style.css";
 
 import "../Components/Buttons.css";
 import "../Components/Container.css";
@@ -16,58 +17,65 @@ const Signup = () => {
     console.log("Signup Details:", { email, username, password, rememberMe });
   };
 
-   useEffect(() => {
-      
-      const savedBrightness = localStorage.getItem("brightness");
-      if (savedBrightness) {
-        document.body.style.filter = `brightness(${savedBrightness}%)`;
-      }
-    }, []);
+  useEffect(() => {
+    const savedBrightness = localStorage.getItem("brightness");
+    if (savedBrightness) {
+      document.body.style.filter = `brightness(${savedBrightness}%)`;
+    }
+  }, []);
+
+  const navigate = useNavigate();
+
+  const handleSignInUp = () => {
+    navigate("/SignInUp");
+  };
+
+  const handleInsPlay = () => {
+    navigate("/InsPlay");
+  };
 
   return (
     <div className="Container1">
-       <div className="Container22">
-
-
-     
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <div className="remember-mee">
+      <div className="Container22">
+        <form className="signup-form" onSubmit={handleSubmit}>
           <input
-            type="checkbox"
-            checked={rememberMe}
-            onChange={() => setRememberMe(!rememberMe)}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
-          <label>Remember Me</label>
-        </div>
-        <button type="submit" className="signuup-button"></button>
-
-        
-      </form>
-      <button className="back-bttn"></button>
-
-  
-    </div></div>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <div className="remember-mee">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={() => setRememberMe(!rememberMe)}
+            />
+            <label>Remember Me</label>
+          </div>
+          <button
+            type="submit"
+            className="signuup-button"
+            onClick={handleInsPlay}
+          ></button>
+        </form>
+        <button className="back-bttn" onClick={handleSignInUp}></button>
+      </div>
+    </div>
   );
 };
 

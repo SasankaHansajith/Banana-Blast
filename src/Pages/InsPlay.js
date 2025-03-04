@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 import "./Style.css";
 import "../Components/Buttons.css";
@@ -13,6 +14,21 @@ const InsPlay = () => {
       document.body.style.filter = `brightness(${savedBrightness}%)`;
     }
   }, []);
+  const navigate = useNavigate();
+  const handlesettings = () => {
+    navigate("/Setting");
+  };
+
+  const handleLeaderBoard = () => {
+    navigate("/LeaderBoard");
+  };
+  const handleGameUi = () => {
+    navigate("/GameUi");
+  };
+
+  const handleSignInUp = () => {
+    navigate("/SignInUp");
+  };
 
   return (
     <div className="Container1">
@@ -31,7 +47,7 @@ const InsPlay = () => {
             Are you ready?
           </p>
 
-          <button className="play-button"></button>
+          <button className="play-button" onClick={handleGameUi}></button>
         </div>
 
         {/* Bottom Icons with Mute Button */}
@@ -42,9 +58,13 @@ const InsPlay = () => {
           </label>
         </div>
 
-        <button className="settings-button"></button>
-        <button className="back-bttn"></button>
-        <button className="leaderboard-button"></button>
+        <button className="settings-button" onClick={handlesettings}></button>
+
+        <button className="back-bttn" onClick={handleSignInUp}></button>
+        <button
+          className="leaderboard-button"
+          onClick={handleLeaderBoard}
+        ></button>
       </div>
     </div>
   );

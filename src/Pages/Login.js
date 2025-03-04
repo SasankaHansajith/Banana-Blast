@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
@@ -22,7 +23,17 @@ const Login = () => {
     }
   }, []);
 
-  return ( 
+  const navigate = useNavigate();
+
+  const handleSignInUp = () => {
+    navigate("/SignInUp");
+  };
+
+  const handleInsPlay = () => {
+    navigate("/InsPlay");
+  };
+
+  return (
     <div className="Container1">
       <div className="Container22">
         <form className="login-form" onSubmit={handleSubmit}>
@@ -48,13 +59,14 @@ const Login = () => {
             />
             <label>Remember Me</label>
           </div>
-          <button type="submit" className="login-button">
-           
-          </button>
+          <button
+            type="submit"
+            className="login-button"
+            onClick={handleInsPlay}
+          ></button>
         </form>
 
-        <button className="back-bttn">
-        </button>
+        <button className="back-bttn" onClick={handleSignInUp}></button>
       </div>
     </div>
   );

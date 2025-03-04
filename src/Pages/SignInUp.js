@@ -21,11 +21,6 @@ const SignInOut = () => {
     navigate("/insplay"); // Navigate to a guest page
   };
 
-  // Navigate back to the previous page when the back button is clicked
-  const handleBack = () => {
-    navigate(-1); // This will navigate to the previous page
-  };
-
   useEffect(() => {
     // Apply brightness effect when the component mounts
     const savedBrightness = localStorage.getItem("brightness");
@@ -37,19 +32,12 @@ const SignInOut = () => {
   return (
     <div className="Container1">
       <div className="Container22">
-        <div class="playerbadge">
-          <span class="playername">Player 1</span>
-        </div>
-
         {/* Sign In / Sign Up Box */}
         <div className="signin-box">
           <button className="signin-button" onClick={handleSignIn}></button>
           <button className="signup-button" onClick={handleSignUp}></button>
           <button className="guest-button" onClick={handleGuest}></button>
         </div>
-
-        {/* Back Button */}
-        <button className="back-bttn" onClick={handleBack}></button>
       </div>
     </div>
   );
