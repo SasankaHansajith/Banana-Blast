@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
@@ -25,6 +26,13 @@ const Settings = () => {
   useEffect(() => {
     document.body.style.filter = `brightness(${brightness}%)`; // Apply filter to the body
   }, [brightness]);
+
+  const navigate = useNavigate();
+  const   handleInsPlay = () => {
+    navigate("/InsPlay");
+  };
+
+
 
   return (
     <div className="Container1">
@@ -61,7 +69,7 @@ const Settings = () => {
           </div>
         </div>
 
-        <button className="back-bttn"> </button>
+        <button className="back-bttn" onClick={handleInsPlay}></button>
       </div>
     </div>
   );

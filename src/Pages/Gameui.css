@@ -29,15 +29,19 @@
 }
 
 .score {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-  padding: 15px 20px;
+  position: absolute;
+  bottom: -150px;
+  font-size: 30px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
   border-radius: 30px;
-  background: linear-gradient(180deg, #ffffff18 0%, #fdc519 100%);
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
   min-width: 140px;
   text-align: center;
+  right: 50px;
 }
 
 .game-area {
