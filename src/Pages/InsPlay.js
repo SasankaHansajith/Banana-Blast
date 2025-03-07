@@ -10,25 +10,26 @@ import gameSoundPath from "../assets/Sound.mp3";
 
 const InsPlay = () => {
   const [isMuted, setIsMuted] = useState(false); // State for mute/unmute functionality
+  const [isPlaying, setIsPlaying] = useState(false); // Track if the sound is playing
   const navigate = useNavigate();
 
-  // Create the audio object once when the component mounts
+  // Create the audio object
   const gameSound = new Audio(gameSoundPath);
 
   // Handle game sound playing or pausing based on mute state
   useEffect(() => {
-    if (!isMuted) {
+    if (!isMuted && isPlaying) {
       gameSound.loop = true; // Loop the sound for continuous play
       gameSound.play(); // Play the sound
     } else {
-      gameSound.pause(); // Pause the sound when muted
+      gameSound.pause(); // Pause the sound when muted or not playing
     }
 
     // Cleanup: stop sound when the component unmounts
     return () => {
       gameSound.pause();
     };
-  }, [isMuted]); // Only re-run the effect when the mute state changes
+  }, [isMuted, isPlaying, gameSound]); // Add gameSound to the dependency array
 
   // Handlers for navigation buttons
   const handlesettings = () => {
@@ -51,6 +52,12 @@ const InsPlay = () => {
     setIsMuted(!isMuted);
   };
 
+  // Handle play button click (trigger audio play)
+  const handlePlayClick = () => {
+    setIsPlaying(true); // Start playing the sound
+    handleGameUi(); // Navigate to game UI after sound starts
+  };
+
   return (
     <div className="Container1">
       <div className="Container22">
@@ -68,7 +75,8 @@ const InsPlay = () => {
             Are you ready?
           </p>
 
-          <button className="play-button" onClick={handleGameUi}></button>
+          {/* Play Button to trigger audio */}
+          <button className="play-button" onClick={handlePlayClick}></button>
         </div>
 
         {/* Bottom Icons with Mute Button */}
