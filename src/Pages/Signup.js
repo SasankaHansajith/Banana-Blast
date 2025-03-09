@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { signupUser } from "../firebase/authService"; // Import Firebase signup function
 import "./Style.css";
-
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
@@ -10,12 +10,10 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  // const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState(""); // Error state for handling signup errors
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Signup Details:", { email, username, password, rememberMe });
-  };
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedBrightness = localStorage.getItem("brightness");
@@ -24,14 +22,16 @@ const Signup = () => {
     }
   }, []);
 
-  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSignInUp = () => {
-    navigate("/SignInUp");
-  };
-
-  const handleInsPlay = () => {
-    navigate("/InsPlay");
+    const response = await signupUser(email, password);
+    if (response.success) {
+      console.log("Signup successful:", response.user);
+      navigate("/InsPlay"); // Redirect to InsPlay on success
+    } else {
+      setError(response.error);
+    }
   };
 
   return (
@@ -59,21 +59,20 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <div className="remember-mee">
+          {/* <div className="remember-me">
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={() => setRememberMe(!rememberMe)}
             />
             <label>Remember Me</label>
-          </div>
-          <button
-            type="submit"
-            className="signuup-button"
-            onClick={handleInsPlay}
-          ></button>
+          </div> */}
+          {error && <p className="error-message">{error}</p>} {/* Show error if signup fails */}
+          <button type="submit" className="signup-button"></button>
         </form>
-        <button className="back-bttn" onClick={handleSignInUp}></button>
+        <button className="back-bttn" onClick={() => navigate("/SignInUp")}>
+          Back
+        </button>
       </div>
     </div>
   );

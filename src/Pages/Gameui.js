@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Gameui.css";
 import "./Style.css";
@@ -7,9 +8,20 @@ import "../Components/Badge.css";
 
 const Gameui = () => {
   const [timeLeft, setTimeLeft] = useState(120); // 2 minutes countdown
-  const [isPaused, setIsPaused] = useState(false); // Track pause state
-  const [gameOver, setGameOver] = useState(false); // Track game over state
-  const [score] = useState(3000);
+  const [isPaused, setIsPaused] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(3000);
+  const [questionImage, setQuestionImage] = useState(null);
+  const [solution, setSolution] = useState(null);
+  const [userAnswer, setUserAnswer] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [feedback, setFeedback] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchQuestion(); // Fetch question when component mounts
+  }, []);
 
   useEffect(() => {
     if (timeLeft > 0 && !isPaused) {
@@ -18,20 +30,51 @@ const Gameui = () => {
       }, 1000);
       return () => clearInterval(timer);
     } else if (timeLeft === 0) {
-      setGameOver(true); // Set game over when time reaches 0
+      setGameOver(true);
     }
   }, [timeLeft, isPaused]);
+
+  // Fetch question from API
+  const fetchQuestion = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get("http://marcconrad.com/uob/banana/api.php");
+      setQuestionImage(response.data.question); // Store image URL
+      setSolution(response.data.solution); // Store correct answer
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching question:", error);
+      setLoading(false);
+    }
+  };
+
+  // Handle user answer selection
+  const handleAnswerClick = (num) => {
+    setUserAnswer(num);
+    if (num === solution) {
+      setScore((prevScore) => prevScore + 100); // Increase score on correct answer
+      setFeedback("Correct! 🎉");
+      setTimeout(() => {
+        fetchQuestion(); // Fetch a new question
+        setFeedback("");
+      }, 1000);
+    } else {
+      setFeedback("Wrong! ❌ Try again.");
+    }
+  };
 
   // Toggle pause and resume
   const handlePauseResume = () => {
     setIsPaused((prev) => !prev);
   };
 
-  // Restart the game (reset time and start countdown)
+  // Restart the game
   const handleRestart = () => {
-    setTimeLeft(120); // Reset time to 2 minutes
-    setIsPaused(false); // Ensure the timer runs
-    setGameOver(false); // Remove Game Over message
+    setTimeLeft(120);
+    setIsPaused(false);
+    setGameOver(false);
+    setScore(3000);
+    fetchQuestion();
   };
 
   // Format time for display
@@ -41,18 +84,12 @@ const Gameui = () => {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
-  // Apply brightness effect when the component mounts
   useEffect(() => {
     const savedBrightness = localStorage.getItem("brightness");
     if (savedBrightness) {
       document.body.style.filter = `brightness(${savedBrightness}%)`;
     }
   }, []);
-
-  const navigate = useNavigate();
-  const handleInsPlay = () => {
-    navigate("/InsPlay");
-  };
 
   return (
     <div className="Container1">
@@ -69,26 +106,45 @@ const Gameui = () => {
           >
             Time Left: <span>{formatTime(timeLeft)}</span>
           </div>
-          <div className="score">{score}</div>
+          <div className="score">Score: {score}</div>
         </div>
 
-        {/* Show Game Over Screen */}
         {gameOver ? (
           <div className="game-over">
             <h1>Game Over</h1>
-            <button className="restart-btn" onClick={handleRestart}></button>
+            <button className="restart-btn" onClick={handleRestart}>
+              
+            </button>
           </div>
         ) : (
           <>
             <div className="header">
-              {/* Game Area */}
               <div className="game-area">
-                <p>Game Content Here</p>
+                {loading ? (
+                  <p>Loading Question...</p>
+                ) : (
+                  <>
+                    <img
+                      src={questionImage}
+                      alt="Game Question"
+                      className="question-image"
+                      style={{
+                        width: "300px",
+                        height: "300px",
+                        objectFit: "contain",
+                        border: "2px solid #ccc",
+                        borderRadius: "10px",
+                        marginBottom: "10px"
+                      }}
+                    />
+                    <p className="feedback">{feedback}</p>
+                  </>
+                )}
 
                 {/* Number Buttons */}
                 <div className="number-buttons">
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
-                    <button key={num} className="num-btn">
+                    <button key={num} className="num-btn" onClick={() => handleAnswerClick(num)}>
                       {num}
                     </button>
                   ))}
@@ -97,17 +153,17 @@ const Gameui = () => {
             </div>
 
             <div className="sidebar">
-              {/* Pause/Resume Button */}
-              <button
-                className={isPaused ? "resume-btn" : "pause-btn"}
-                onClick={handlePauseResume}
-              ></button>
+              <button className={isPaused ? "resume-btn" : "pause-btn"} onClick={handlePauseResume}>
+                {isPaused ? "Resume" : "Pause"}
+              </button>
 
-              {/* Home Button */}
-              <button className="home-btn" onClick={handleInsPlay}></button>
+              <button className="home-btn" onClick={() => navigate("/InsPlay")}>
+         
+              </button>
 
-              {/* Restart Button */}
-              <button className="restart-btn" onClick={handleRestart}></button>
+              <button className="restart-btn" onClick={handleRestart}>
+              
+              </button>
             </div>
           </>
         )}

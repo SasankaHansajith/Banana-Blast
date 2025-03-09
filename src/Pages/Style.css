@@ -292,7 +292,7 @@
   margin-bottom: 20px;
 }
 
-.remember-mee {
+/* .remember-mee {
   color: #0a2c51;
   font-family: "Lilita One";
   font-size: 26.847px;
@@ -309,20 +309,20 @@
   border-radius: 6.356px;
   background: #fff;
   box-shadow: 0.706px 2.119px 4.661px 0px rgba(0, 0, 0, 0.34);
-}
+} */
 
 .signuup-button {
   background: url("../assets/SignUp.png") no-repeat center center;
-  background-size: 50%;
+  background-size: 50%; /* Adjust the size of the image inside the button */
   border: none;
-  padding: 20px 40px;
+  padding: 20px 40px; /* Increase padding for a larger button */
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
+  width: 100px; /* Set a fixed width for the button */
   height: 80px;
 }
 

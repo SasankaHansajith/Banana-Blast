@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../firebase/authService"; // Firebase auth function
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");  // Updated username to email
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState(""); // To display errors if any
+  const [error, setError] = useState(""); // Error message state
 
   const navigate = useNavigate();
-
-  // Handle form submit without Firebase (since it's removed)
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Handle form submission logic (without Firebase)
-    console.log("Username:", username, "Password:", password);
-
-    // Redirect after successful login (custom logic here)
-    navigate("/InsPlay");
-  };
 
   useEffect(() => {
     // Apply brightness effect when the component mounts
@@ -31,12 +22,16 @@ const Login = () => {
     }
   }, []);
 
-  const handleSignInUp = () => {
-    navigate("/SignInUp");
-  };
-
-  const handleInsPlay = () => {
-    navigate("/InsPlay");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const response = await loginUser(email, password);
+    if (response.success) {
+      console.log("Login successful:", response.user);
+      navigate("/InsPlay"); // Redirect on success
+    } else {
+      setError(response.error);
+    }
   };
 
   return (
@@ -44,10 +39,10 @@ const Login = () => {
       <div className="Container22">
         <form className="login-form" onSubmit={handleSubmit}>
           <input
-            type="email" // Use email input type
-            placeholder="Username" // Placeholder should be changed to "Email" for clarity
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
@@ -65,17 +60,11 @@ const Login = () => {
             />
             <label>Remember Me</label>
           </div>
-          {error && <p className="error-message">{error}</p>} {/* Show error message if login fails */}
-          <button
-            type="submit"
-            className="login-button"
-            onClick={handleInsPlay}
-          >
-           
-          </button>
+          {error && <p className="error-message">{error}</p>} {/* Show error if login fails */}
+          <button type="submit" className="login-button"></button>
         </form>
 
-        <button className="back-bttn" onClick={handleSignInUp}>
+        <button className="back-bttn" onClick={() => navigate("/SignInUp")}>
           
         </button>
       </div>
