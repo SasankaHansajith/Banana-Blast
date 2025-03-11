@@ -1,4 +1,51 @@
-.instructions-bbox {
+/* Facebook login button styling */
+.facebook-login-button {
+  background: url("../assets/facebook.png") no-repeat center center; /* Set the background image */
+  background-size: 60%; /* Adjust the size of the image inside the button */
+  border: none;
+  padding: 10px 10px; /* Increase padding for a larger button */
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px; /* Set a fixed width for the button */
+  height: 70px; /* Set a fixed height for the button */
+  position: absolute;
+  right: 790px; /* Position the button */
+  margin-top: 550px; /* Add spacing between buttons */
+}
+
+.facebook-login-button:hover {
+  background-size: 55%; /* Slightly increase the size on hover */
+  transform: scale(1.05);
+}
+
+/* Twitter login button styling */
+.twitter-login-button {
+  background: url("../assets/twitter.png") no-repeat center center; /* Set the background image */
+  background-size: 60%; /* Adjust the size of the image inside the button */
+  border: none;
+  padding: 10px 10px; /* Increase padding for a larger button */
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 126px; /* Set a fixed width for the button */
+  height: 126px; /* Set a fixed height for the button */
+  position: absolute;
+  left: 760px; /* Position the button */
+  margin-top: 550px; /* Add spacing between buttons */
+}
+
+.twitter-login-button:hover {
+  background-size: 55%; /* Slightly increase the size on hover */
+  transform: scale(1.05);
+}
+-------------------------------------------- .instructions-bbox {
   width: 500px; /* Scales dynamically */
   max-width: 1000px;
   height: 500px; /* Reduced height slightly for balance */
@@ -167,6 +214,15 @@
   transform: scale(1.1);
 }
 
+.volume-slider {
+  width: 100px;
+  margin-left: 10px;
+  position: absolute;
+  bottom: 40px; /* Same as settings-button */
+  left: 350px;
+
+}
+
 /* ==============SignIn Page =======================================================*/
 
 .Container2 {
@@ -228,7 +284,9 @@
   background: #fff;
   box-shadow: 0.706px 2.119px 4.661px 0px rgba(0, 0, 0, 0.34);
 }
-.login-button {
+
+
+.loginn-button {
   background: url("../assets/Sign In.png") no-repeat center center; /* Set the background image */
   background-size: 50%; /* Adjust the size of the image inside the button */
   border: none;
@@ -243,11 +301,15 @@
   height: 80px; /* Set a fixed height for the button */
 }
 
-.login-button:hover {
-  background: url("../assets/Sign In.png") no-repeat center center; /* Keep the same background image on hover */
-  background-size: 50%;
+.loginn-button:hover {
+ 
   transform: scale(1.05);
 }
+
+
+
+
+
 
 /* ==============SignUp Page ------------------------------------------------------ */
 
@@ -292,24 +354,6 @@
   margin-bottom: 20px;
 }
 
-/* .remember-mee {
-  color: #0a2c51;
-  font-family: "Lilita One";
-  font-size: 26.847px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.537px;
-}
-
-.remember-mee input {
-  width: 26.836px;
-  height: 26.836px;
-  flex-shrink: 0;
-  border-radius: 6.356px;
-  background: #fff;
-  box-shadow: 0.706px 2.119px 4.661px 0px rgba(0, 0, 0, 0.34);
-} */
 
 .signuup-button {
   background: url("../assets/SignUp.png") no-repeat center center;
@@ -322,13 +366,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px; /* Set a fixed width for the button */
-  height: 80px;
+  width: 250px; /* Set a fixed width for the button */
+  height: 80px; /* Set a fixed height for the button */
 }
 
 .signuup-button:hover {
-  background: url("../assets/SignUp.png") no-repeat center center; /* Keep the same background image on hover */
-  background-size: 50%;
+
   transform: scale(1.05);
 }
 

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth"; // Import onAuthStateChanged
+import { doc, getDoc } from "firebase/firestore"; // Import Firestore functions
+import { auth, db } from "../firebase/firebaseConfig"; // Import auth and db from firebaseConfig
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
@@ -7,6 +10,7 @@ import "../Components/Badge.css";
 
 const Settings = () => {
   const [brightness, setBrightness] = useState(50); // Default brightness level
+  const [username, setUsername] = useState("Player 1"); // State for username
 
   const handleBrightnessChange = (e) => {
     const newBrightness = e.target.value;
@@ -27,18 +31,37 @@ const Settings = () => {
     document.body.style.filter = `brightness(${brightness}%)`; // Apply filter to the body
   }, [brightness]);
 
+  // Fetch the username from Firestore
+  useEffect(() => {
+    const fetchUsername = async (user) => {
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
+      }
+    };
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        fetchUsername(user);
+      } else {
+        setUsername("Player 1");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const navigate = useNavigate();
-  const   handleInsPlay = () => {
+  const handleInsPlay = () => {
     navigate("/InsPlay");
   };
-
-
 
   return (
     <div className="Container1">
       <div className="Container22 ">
-        <div class="playerbadge">
-          <span class="playername">Player 1</span>
+        <div className="playerbadge">
+          <span className="playername">{username}</span>
         </div>
 
         <div className="settings-content">

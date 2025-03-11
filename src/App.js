@@ -11,24 +11,29 @@ import SignInUp from "./Pages/SignInUp";
 import Gameui from "./Pages/Gameui";
 import Loading from "./Pages/Loading";
 
+// Import SoundProvider
+import { SoundProvider } from "./Pages/SoundContext";
+
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Default route to Login page */}
-        <Route path="/" element={<Login />} />
-        {/* Explicit route for /login */}
-        <Route path="/login" element={<Login />} />
-        {/* Other routes */}
-        <Route path="/leaderboard" element={<LeaderBoard />} />
-        <Route path="/insplay" element={<InsPlay />} />
-        <Route path="/setting" element={<Setting />} />
-        <Route path="/Gameui" element={<Gameui />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/SignInUp" element={<SignInUp />} />
-        <Route path="/Loading" element={<Loading />} />
-      </Routes>
-    </Router>
+    <SoundProvider>
+      <Router>
+        <Routes>
+          {/* Default route to Login page */}
+          <Route path="/" element={<Login />} />
+          {/* Explicit route for /login */}
+          <Route path="/login" element={<Login />} />
+          {/* Other routes */}
+          <Route path="/leaderboard" element={<LeaderBoard />} />
+          <Route path="/insplay" element={<InsPlay />} />
+          <Route path="/setting" element={<Setting />} />
+          <Route path="/Gameui" element={<Gameui />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/SignInUp" element={<SignInUp />} />
+          <Route path="/Loading" element={<Loading />} />
+        </Routes>
+      </Router>
+    </SoundProvider>
   );
 }
 

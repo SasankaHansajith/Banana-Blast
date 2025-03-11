@@ -1,35 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth"; // Import onAuthStateChanged
+import { doc, getDoc } from "firebase/firestore"; // Import Firestore functions
+import { auth, db } from "../firebase/firebaseConfig"; // Import auth and db from firebaseConfig
+import { SoundContext } from "./SoundContext"; // Import SoundContext
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
 
-// Import the sound file
-import gameSoundPath from "../assets/Sound.mp3";
-
 const InsPlay = () => {
-  const [isMuted, setIsMuted] = useState(false); // State for mute/unmute functionality
-  const [isPlaying, setIsPlaying] = useState(false); // Track if the sound is playing
+  const [username, setUsername] = useState("Player 1"); // State for username
   const navigate = useNavigate();
+  const { isMuted, toggleMute, playSound, volume, changeVolume } = useContext(SoundContext); // Use SoundContext
 
-  // Create the audio object
-  const gameSound = new Audio(gameSoundPath);
-
-  // Handle game sound playing or pausing based on mute state
+  // Fetch the username from Firestore
   useEffect(() => {
-    if (!isMuted && isPlaying) {
-      gameSound.loop = true; // Loop the sound for continuous play
-      gameSound.play(); // Play the sound
-    } else {
-      gameSound.pause(); // Pause the sound when muted or not playing
-    }
-
-    // Cleanup: stop sound when the component unmounts
-    return () => {
-      gameSound.pause();
+    const fetchUsername = async (user) => {
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
+      }
     };
-  }, [isMuted, isPlaying, gameSound]); // Add gameSound to the dependency array
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        fetchUsername(user);
+      } else {
+        setUsername("Player 1");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // Play sound when the component mounts
+  useEffect(() => {
+    playSound();
+  }, [playSound]);
 
   // Handlers for navigation buttons
   const handlesettings = () => {
@@ -47,22 +56,11 @@ const InsPlay = () => {
     navigate("/SignInUp");
   };
 
-  // Handle mute toggle
-  const handleMuteToggle = () => {
-    setIsMuted(!isMuted);
-  };
-
-  // Handle play button click (trigger audio play)
-  const handlePlayClick = () => {
-    setIsPlaying(true); // Start playing the sound
-    handleGameUi(); // Navigate to game UI after sound starts
-  };
-
   return (
     <div className="Container1">
       <div className="Container22">
         <div className="playerbadge">
-          <span className="playername">Player 1</span>
+          <span className="playername">{username}</span>
         </div>
 
         {/* Instructions Box */}
@@ -76,7 +74,7 @@ const InsPlay = () => {
           </p>
 
           {/* Play Button to trigger audio */}
-          <button className="play-button" onClick={handlePlayClick}></button>
+          <button className="play-button" onClick={handleGameUi}></button>
         </div>
 
         {/* Bottom Icons with Mute Button */}
@@ -87,10 +85,20 @@ const InsPlay = () => {
               id="mute-toggle"
               className="mute-toggle"
               checked={isMuted}
-              onChange={handleMuteToggle} // Toggle sound on change
+              onChange={toggleMute} // Toggle sound on change
             />
             <div className="mute-icon"></div>
           </label>
+          {/* Volume Control Slider */}
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={(e) => changeVolume(e.target.value)}
+            className="volume-slider"
+          />
         </div>
 
         <button className="settings-button" onClick={handlesettings}></button>

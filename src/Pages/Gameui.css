@@ -30,7 +30,7 @@
 
 .score {
   position: absolute;
-  bottom: -150px;
+  bottom: -300px;
   font-size: 30px;
   font-family: "Lilita One", sans-serif;
   font-weight: bold;
@@ -44,23 +44,60 @@
   right: 50px;
 }
 
+/* Timer */
+.timer {
+  position: absolute;
+  bottom: -450px;
+  font-size: 30px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+  min-width: 140px;
+  text-align: center;
+  right: 50px;
+}
+
+.hearts {
+  position: absolute;
+  top: 150px; /* Adjust this value to position it under the timer */
+  right: 35px;
+  font-size:35px;
+  color: red;
+}
+
+
 .game-area {
-  width: 684.255px;
-  height: 590.638px;
-  border-radius: 55.319px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(28.936px);
+  width: 50vw;
+  max-width: 1920px;
+  height: 40vh;
+  max-height: 900px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 5px;
+}
+
+.question-image {
+  width: 500px;
+  height: auto;
+  max-width: 600px;
+  max-height: 600px;
+  object-fit: contain;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .number-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: -5px;
 }
 
 .num-btn {
@@ -82,22 +119,8 @@
   color: white;
 }
 
-/* Timer */
-.timer {
-  position: absolute;
-  bottom: -400px;
-  font-size: 30px;
-  font-family: "Lilita One", sans-serif;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  margin-right: 15px;
-  min-width: 140px;
-  text-align: center;
-  right: 50px;
-}
+
+
 
 /* Timer turns red in last 30 seconds */
 .warning {
@@ -252,4 +275,38 @@
 .game-over .restart-btn:hover {
   transform: scale(1.1);
   filter: brightness(1.2);
+}
+
+/* Game Over Home Button */
+.game-over .home-btn {
+  position: relative;
+  bottom: 0px;
+  left: 0;
+  width: 200px;
+  height: 90px;
+  background: url("../assets/Homebtn.png") no-repeat center center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.game-over .home-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Feedback Message */
+.feedback {
+  position: absolute;
+  bottom: 20px;
+  font-size: 24px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: bold;
+  color: red;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
