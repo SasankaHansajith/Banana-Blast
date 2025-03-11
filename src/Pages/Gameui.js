@@ -166,10 +166,10 @@ const Gameui = () => {
           <div className="game-over">
             <h1>Game Over</h1>
             <button className="restart-btn" onClick={handleRestart}>
-              Restart
+             
             </button>
             <button className="home-btn" onClick={() => navigate("/InsPlay")}>
-              Home
+             
             </button>
           </div>
         ) : (
@@ -211,15 +211,15 @@ const Gameui = () => {
 
             <div className="sidebar">
               <button className={isPaused ? "resume-btn" : "pause-btn"} onClick={handlePauseResume}>
-                {isPaused ? "Resume" : "Pause"}
+                
               </button>
 
               <button className="home-btn" onClick={() => navigate("/InsPlay")}>
-                Home
+             
               </button>
 
               <button className="restart-btn" onClick={handleRestart}>
-                Restart
+             
               </button>
             </div>
 

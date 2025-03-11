@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth"; // Import onAuthStateChanged
 import { doc, getDoc } from "firebase/firestore"; // Import Firestore functions
 import { auth, db } from "../firebase/firebaseConfig"; // Import auth and db from firebaseConfig
@@ -12,28 +12,34 @@ import "../Components/Badge.css";
 const InsPlay = () => {
   const [username, setUsername] = useState("Player 1"); // State for username
   const navigate = useNavigate();
+  const location = useLocation();
   const { isMuted, toggleMute, playSound, volume, changeVolume } = useContext(SoundContext); // Use SoundContext
 
-  // Fetch the username from Firestore
+  // Fetch the username from Firestore or use guest username
   useEffect(() => {
-    const fetchUsername = async (user) => {
-      const userDoc = await getDoc(doc(db, "users", user.uid));
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
-      }
-    };
+    const guestUsername = location.state?.username;
+    if (guestUsername) {
+      setUsername(guestUsername);
+    } else {
+      const fetchUsername = async (user) => {
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
+        }
+      };
 
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUsername(user);
-      } else {
-        setUsername("Player 1");
-      }
-    });
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          fetchUsername(user);
+        } else {
+          setUsername("Player 1");
+        }
+      });
 
-    return () => unsubscribe();
-  }, []);
+      return () => unsubscribe();
+    }
+  }, [location.state]);
 
   // Play sound when the component mounts
   useEffect(() => {
