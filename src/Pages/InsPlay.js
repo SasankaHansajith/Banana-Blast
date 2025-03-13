@@ -9,6 +9,11 @@ import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
 
+//  ****************************************
+//  *         Code By @Sasaa_💀              *
+//  ****************************************
+
+
 const InsPlay = () => {
   const [username, setUsername] = useState("Player 1"); // State for username
   const navigate = useNavigate();

@@ -7,6 +7,11 @@ import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Badge.css";
 
+//  ****************************************
+//  *         Code By @Sasaa_💀              *
+//  ****************************************
+
+
 const LeaderBoard = () => {
   const [username, setUsername] = useState("Player 1"); // State for username
   const [players, setPlayers] = useState([]); // State for leaderboard players

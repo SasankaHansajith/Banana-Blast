@@ -8,6 +8,11 @@ import "../Components/Buttons.css";
 import "../Components/Container.css";
 import "../Components/Badge.css";
 
+//  ****************************************
+//  *         Code By @Sasaa_💀             *
+//  ****************************************
+
+
 const Settings = () => {
   const [brightness, setBrightness] = useState(50); // Default brightness level
   const [username, setUsername] = useState("Player 1"); // State for username

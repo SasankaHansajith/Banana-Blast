@@ -1,3 +1,5 @@
+/* Author: @Sasanka */
+
 /* Facebook login button styling */
 .facebook-login-button {
   background: url("../assets/Asfacebook.png") no-repeat center center; /* Set the background image */
@@ -179,23 +181,23 @@
 
 /* Mute button styling */
 .mute-buttton {
-  padding: 20px; /* Increased padding for better spacing */
+  padding: 20px; 
   transition: transform 0.2s ease-in-out, box-shadow 0.2s;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-size: contain;
 
   position: absolute;
-  bottom: 1px; /* Same as settings-button */
-  left: 265px; /* Same as settings-button */
+  bottom: 1px; 
+  left: 265px; 
 }
 
-/* Optional: You can also adjust the hover effect for larger buttons */
+
 .mute-buttton:hover {
   transform: scale(1.1);
 }
 /* Hidden checkbox */
 .mute-toggle {
-  display: none; /* Hide checkbox */
+  display: none; 
 }
 
 /* Default (Sound On) state */
@@ -226,69 +228,69 @@
   width: 125px;
   margin-left: 10px;
   position: absolute;
-  bottom: 45px; /* Same as settings-button */
+  bottom: 45px; 
   left: 350px;
-  -webkit-appearance: none; /* Remove default styling */
-  appearance: none; /* Remove default styling */
-  height: 10px; /* Height of the slider track */
+  -webkit-appearance: none; 
+  appearance: none; 
+  height: 10px; 
   background: linear-gradient(
     to right,
     #4caf50,
     #ffeb3b,
     #f44336
-  ); /* Gradient color for the track */
-  border-radius: 5px; /* Rounded corners for the track */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Slight transparency */
-  transition: opacity 0.2s; /* Smooth transition for opacity */
+  );
+  border-radius: 5px; 
+  outline: none; 
+  opacity: 0.7; 
+  transition: opacity 0.2s; 
 }
 
 .volume-slider:hover {
-  opacity: 1; /* Full opacity on hover */
+  opacity: 1; 
 }
 
 .volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Remove default styling */
-  appearance: none; /* Remove default styling */
-  width: 20px; /* Width of the thumb */
-  height: 20px; /* Height of the thumb */
-  background: #ffffff; /* Color of the thumb */
-  border-radius: 50%; /* Rounded corners for the thumb */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5); /* Shadow for the thumb */
-  transition: transform 0.2s; /* Smooth transition for transform */
+  -webkit-appearance: none; 
+  appearance: none; 
+  width: 20px; 
+  height: 20px; 
+  background: #ffffff; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s; 
 }
 
 .volume-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2); /* Slightly enlarge the thumb on hover */
+  transform: scale(1.2); 
 }
 
 .volume-slider::-moz-range-thumb {
-  width: 20px; /* Width of the thumb */
-  height: 20px; /* Height of the thumb */
-  background: #ffffff; /* Color of the thumb */
-  border-radius: 50%; /* Rounded corners for the thumb */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5); /* Shadow for the thumb */
-  transition: transform 0.2s; /* Smooth transition for transform */
+  width: 20px; 
+  height: 20px; 
+  background: #ffffff; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5); 
+  transition: transform 0.2s; 
 }
 
 .volume-slider::-moz-range-thumb:hover {
-  transform: scale(1.2); /* Slightly enlarge the thumb on hover */
+  transform: scale(1.2); 
 }
 
 .volume-slider::-ms-thumb {
-  width: 20px; /* Width of the thumb */
-  height: 20px; /* Height of the thumb */
-  background: #ffffff; /* Color of the thumb */
-  border-radius: 50%; /* Rounded corners for the thumb */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5); /* Shadow for the thumb */
-  transition: transform 0.2s; /* Smooth transition for transform */
+  width: 20px; 
+  height: 20px; 
+  background: #ffffff; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5); 
+  transition: transform 0.2s; 
 }
 
 .volume-slider::-ms-thumb:hover {
-  transform: scale(1.2); /* Slightly enlarge the thumb on hover */
+  transform: scale(1.2); 
 }
 
 /* ==============SignIn Page =======================================================*/
@@ -354,18 +356,18 @@
 }
 
 .loginn-button {
-  background: url("../assets/Sign In.png") no-repeat center center; /* Set the background image */
-  background-size: 50%; /* Adjust the size of the image inside the button */
+  background: url("../assets/Sign In.png") no-repeat center center; 
+  background-size: 50%; 
   border: none;
-  padding: 20px 40px; /* Increase padding for a larger button */
+  padding: 20px 40px; 
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px; /* Set a fixed width for the button */
-  height: 80px; /* Set a fixed height for the button */
+  width: 250px; 
+  height: 80px; 
 }
 
 .loginn-button:hover {
@@ -417,17 +419,17 @@
 
 .signuup-button {
   background: url("../assets/SignUp.png") no-repeat center center;
-  background-size: 50%; /* Adjust the size of the image inside the button */
+  background-size: 50%; 
   border: none;
-  padding: 20px 40px; /* Increase padding for a larger button */
+  padding: 20px 40px; 
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px; /* Set a fixed width for the button */
-  height: 80px; /* Set a fixed height for the button */
+  width: 250px; 
+  height: 80px; 
 }
 
 .signuup-button:hover {
@@ -456,6 +458,10 @@
   transform: translate(-50%, -50%);
   padding: 20px;
 }
+
+
+/* Author: @Sasanka */
+
 
 .settings-title {
   color: #0a2c51;
@@ -516,10 +522,10 @@
 
 /* Selected state for difficulty buttons */
 .difficulty-button.selected {
-  box-shadow: 0 0 8px #f08603; /* Green glow effect */
-  transform: scale(1.01); /* Slightly enlarge the button */
-  border-radius: 20px; /* Curved corners */
-  background-color: #f0850395; /* Light green fill color */
+  box-shadow: 0 0 8px #f08603; 
+  transform: scale(1.01); 
+  border-radius: 20px; 
+  background-color: #f0850395; 
 }
 
 /* Difficulty display styling */
@@ -599,6 +605,10 @@
   color: #555;
 }
 
+
+/* Author: @Sasanka */  
+
+
 /* ==============LeaderBoard  Page =======================================================*/
 
 /* Leaderboard Container */
@@ -619,7 +629,7 @@
   border-radius: 20px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
 
-  /* Set a higher z-index to bring it to the front */
+  
 }
 
 /* Difficulty dropdown styling */
@@ -646,8 +656,8 @@
   width: 900px;
   height: 450px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1); /* Light background for the box */
-  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25); /* Adding box shadow for depth */
+  background: rgba(255, 255, 255, 0.1); 
+  box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -672,16 +682,16 @@
 /* Leaderboard Rows (for individual player cards) */
 .leaderboard-rows {
   display: flex;
-  flex-direction: column; /* Stack rows vertically */
+  flex-direction: column; 
   width: 850px;
 }
 
 /* Each Row (for a player) */
 .leaderboard-row {
   display: flex;
-  justify-content: space-between; /* Space out the columns */
+  justify-content: space-between; 
   align-items: center;
-  background: rgba(0, 0, 0, 0.214); /* Light background for rows */
+  background: rgba(0, 0, 0, 0.214); 
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 30px;
@@ -689,9 +699,9 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Hover effect for rows */
+
 .leaderboard-row:hover {
-  background: rgba(217, 217, 217, 0.36); /* Darker on hover */
+  background: rgba(217, 217, 217, 0.36); 
 }
 
 /* Rank Column */
@@ -760,7 +770,7 @@
 .signin-button,
 .signup-button,
 .guest-button {
-  width: 220px; /* Ensures the size applies */
+  width: 220px; 
   height: 90px;
 
   background-color: transparent;
@@ -779,18 +789,21 @@
 }
 
 .signin-button {
-  background-image: url("../assets/Sign In.png"); /* Replace with actual image path */
+  background-image: url("../assets/Sign In.png"); 
 }
 
 .signup-button {
-  background-image: url("../assets/SignUp.png"); /* Replace with actual image path */
+  background-image: url("../assets/SignUp.png"); 
 }
 
 .guest-button {
-  background-image: url("../assets/Guest btn.png"); /* Replace with actual image path */
+  background-image: url("../assets/Guest btn.png"); 
 }
 
-/* Hover effect */
+
+/* Author: @Sasanka */
+
+
 .signin-button:hover,
 .signup-button:hover,
 .guest-button:hover {

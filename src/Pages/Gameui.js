@@ -11,6 +11,10 @@ import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Badge.css";
 
+//  ****************************************
+//  *         Code By @Sasaa_💀              *
+//  ****************************************
+
 const Gameui = () => {
   const [timeLeft, setTimeLeft] = useState(300); // Default to 5 minutes
   const [isPaused, setIsPaused] = useState(false);

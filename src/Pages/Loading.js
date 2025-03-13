@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Loading.css";
 import "../Components/Container.css";
 
+//  ****************************************
+//  *         Code By @Sasaa_💀              *
+//  ****************************************
+
+
 export default function Loading() {
   const [progress, setProgress] = useState(0);
   const navigate = useNavigate(); // Initialize the useNavigate hook
