@@ -1,6 +1,6 @@
 /* Facebook login button styling */
 .facebook-login-button {
-  background: url("../assets/facebook.png") no-repeat center center; /* Set the background image */
+  background: url("../assets/Asfacebook.png") no-repeat center center; /* Set the background image */
   background-size: 60%; /* Adjust the size of the image inside the button */
   border: none;
   padding: 10px 10px; /* Increase padding for a larger button */
@@ -10,11 +10,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px; /* Set a fixed width for the button */
-  height: 70px; /* Set a fixed height for the button */
+  width: 350px;
+  height: 80px;
   position: absolute;
-  right: 790px; /* Position the button */
-  margin-top: 550px; /* Add spacing between buttons */
+  right: 525px; /* Position the button */
+  margin-top: 500px; /* Add spacing between buttons */
 }
 
 .facebook-login-button:hover {
@@ -23,8 +23,8 @@
 }
 
 /* Twitter login button styling */
-.twitter-login-button {
-  background: url("../assets/twitter.png") no-repeat center center; /* Set the background image */
+.google-login-button {
+  background: url("../assets/Asgoogle.png") no-repeat center center; /* Set the background image */
   background-size: 60%; /* Adjust the size of the image inside the button */
   border: none;
   padding: 10px 10px; /* Increase padding for a larger button */
@@ -34,19 +34,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 126px; /* Set a fixed width for the button */
-  height: 126px; /* Set a fixed height for the button */
+  width: 350px; /* Set a fixed width for the button */
+  height: 80px; /* Set a fixed height for the button */
   position: absolute;
-  left: 760px; /* Position the button */
-  margin-top: 550px; /* Add spacing between buttons */
+  left: 525px; /* Position the button */
+  margin-top: 500px; /* Add spacing between buttons */
 }
 
-.twitter-login-button:hover {
+.google-login-button:hover {
   background-size: 55%; /* Slightly increase the size on hover */
   transform: scale(1.05);
 }
--------------------------------------------- 
-.instructions-bbox {
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 12px; /* Smaller font size */
+  margin-top: 10px;
+}
+-------------------------------------------- .instructions-bbox {
   width: 500px; /* Scales dynamically */
   max-width: 1000px;
   height: 500px; /* Reduced height slightly for balance */
@@ -90,7 +96,7 @@
 }
 
 .play-button {
-  width: 250px !important; /* Ensures the size applies */
+  width: 250px !important;
   height: 110px !important;
   min-width: 250px;
   min-height: 110px;
@@ -103,7 +109,8 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease-in-out;
-  margin-top: 20px; /* Adds spacing between the button and the text */
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
 .play-button:hover {
@@ -224,7 +231,12 @@
   -webkit-appearance: none; /* Remove default styling */
   appearance: none; /* Remove default styling */
   height: 10px; /* Height of the slider track */
-  background: linear-gradient(to right, #4caf50, #ffeb3b, #f44336); /* Gradient color for the track */
+  background: linear-gradient(
+    to right,
+    #4caf50,
+    #ffeb3b,
+    #f44336
+  ); /* Gradient color for the track */
   border-radius: 5px; /* Rounded corners for the track */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Slight transparency */
@@ -341,7 +353,6 @@
   box-shadow: 0.706px 2.119px 4.661px 0px rgba(0, 0, 0, 0.34);
 }
 
-
 .loginn-button {
   background: url("../assets/Sign In.png") no-repeat center center; /* Set the background image */
   background-size: 50%; /* Adjust the size of the image inside the button */
@@ -358,14 +369,8 @@
 }
 
 .loginn-button:hover {
- 
   transform: scale(1.05);
 }
-
-
-
-
-
 
 /* ==============SignUp Page ------------------------------------------------------ */
 
@@ -410,7 +415,6 @@
   margin-bottom: 20px;
 }
 
-
 .signuup-button {
   background: url("../assets/SignUp.png") no-repeat center center;
   background-size: 50%; /* Adjust the size of the image inside the button */
@@ -427,7 +431,6 @@
 }
 
 .signuup-button:hover {
-
   transform: scale(1.05);
 }
 
@@ -509,6 +512,22 @@
 
 .difficulty-button:hover {
   transform: translateY(-2px);
+}
+
+/* Selected state for difficulty buttons */
+.difficulty-button.selected {
+  box-shadow: 0 0 8px #f08603; /* Green glow effect */
+  transform: scale(1.01); /* Slightly enlarge the button */
+  border-radius: 20px; /* Curved corners */
+  background-color: #f0850395; /* Light green fill color */
+}
+
+/* Difficulty display styling */
+.difficulty {
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .easy {
@@ -603,6 +622,25 @@
   /* Set a higher z-index to bring it to the front */
 }
 
+/* Difficulty dropdown styling */
+.difficulty-dropdown {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.difficulty-dropdown label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.difficulty-dropdown select {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 /* Leaderboard Box */
 .leaderboard-box {
   width: 900px;
@@ -610,7 +648,6 @@
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1); /* Light background for the box */
   box-shadow: 11.064px 20.426px 30.298px 0px rgba(0, 0, 0, 0.25); /* Adding box shadow for depth */
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -693,6 +730,7 @@
   background: #ffa500;
   border-radius: 30px;
 }
+
 
 /* ==============SignInUp Page =======================================================*/
 

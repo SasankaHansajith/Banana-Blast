@@ -2,10 +2,10 @@ import { db } from "../firebase/firebaseConfig"; // Correct the import path
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 // Save score function
-export const saveScore = async (userId, username, score) => {
+export const saveScore = async (userId, username, score, difficulty) => {
   try {
-    // Get the user's score document
-    const userScoreDoc = doc(db, "scores", userId);
+    // Get the user's score document under the specific difficulty
+    const userScoreDoc = doc(db, `scores_${difficulty}`, userId);
     const docSnap = await getDoc(userScoreDoc);
 
     if (docSnap.exists()) {

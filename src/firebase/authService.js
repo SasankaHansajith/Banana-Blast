@@ -1,5 +1,5 @@
 import { auth, db } from "./firebaseConfig";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, FacebookAuthProvider, TwitterAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { collection, query, where, getDocs, setDoc, doc, getDoc } from "firebase/firestore";
 
 // Function to handle user signup
@@ -77,9 +77,9 @@ export const loginWithFacebook = async () => {
   }
 };
 
-// Function to handle Twitter login
-export const loginWithTwitter = async () => {
-  const provider = new TwitterAuthProvider();
+// Function to handle Google login
+export const loginWithGoogle = async () => {
+  const provider = new GoogleAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;

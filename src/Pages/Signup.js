@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { signupUser, loginWithFacebook, loginWithTwitter } from "../firebase/authService"; // Import Facebook and Twitter login functions
+import { signupUser, loginWithFacebook, loginWithGoogle } from "../firebase/authService"; // Import Facebook and Google login functions
 import "./Style.css";
 import "../Components/Buttons.css";
 import "../Components/Container.css";
@@ -34,22 +34,30 @@ const Signup = () => {
   };
 
   const handleFacebookLogin = async () => {
-    const response = await loginWithFacebook();
-    if (response.success) {
-      console.log("Facebook login successful:", response.user);
-      navigate("/InsPlay");
-    } else {
-      setError(response.error);
+    try {
+      const response = await loginWithFacebook();
+      if (response.success) {
+        console.log("Facebook login successful:", response.user);
+        navigate("/InsPlay");
+      } else {
+        setError("Login Unsuccessful");
+      }
+    } catch (error) {
+      setError("Login Unsuccessful");
     }
   };
 
-  const handleTwitterLogin = async () => {
-    const response = await loginWithTwitter();
-    if (response.success) {
-      console.log("Twitter login successful:", response.user);
-      navigate("/InsPlay");
-    } else {
-      setError(response.error);
+  const handleGoogleLogin = async () => {
+    try {
+      const response = await loginWithGoogle();
+      if (response.success) {
+        console.log("Google login successful:", response.user);
+        navigate("/InsPlay");
+      } else {
+        setError("Login Unsuccessful");
+      }
+    } catch (error) {
+      setError("Login Unsuccessful");
     }
   };
 
@@ -81,15 +89,9 @@ const Signup = () => {
           {error && <p className="error-message">{error}</p>}
           <button type="submit" className="signuup-button"></button>
         </form>
-        <button className="facebook-login-button" onClick={handleFacebookLogin}>
-     
-        </button>
-        <button className="twitter-login-button" onClick={handleTwitterLogin}>
-       
-        </button>
-        <button className="back-bttn" onClick={() => navigate("/SignInUp")}>
-          Back
-        </button>
+        <button className="facebook-login-button" onClick={handleFacebookLogin}></button>
+        <button className="google-login-button" onClick={handleGoogleLogin}></button>
+        <button className="back-bttn" onClick={() => navigate("/SignInUp")}></button>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import "../Components/Badge.css";
 const Settings = () => {
   const [brightness, setBrightness] = useState(50); // Default brightness level
   const [username, setUsername] = useState("Player 1"); // State for username
+  const [difficulty, setDifficulty] = useState("easy"); // Default difficulty level
 
   const handleBrightnessChange = (e) => {
     const newBrightness = e.target.value;
@@ -18,11 +19,24 @@ const Settings = () => {
     localStorage.setItem("brightness", newBrightness); // Save brightness to localStorage
   };
 
+  const handleDifficultyChange = (level) => {
+    setDifficulty(level);
+    localStorage.setItem("difficulty", level); // Save difficulty to localStorage
+  };
+
   useEffect(() => {
     // Load the saved brightness from localStorage if available
     const savedBrightness = localStorage.getItem("brightness");
     if (savedBrightness) {
       setBrightness(savedBrightness);
+    }
+
+    // Load the saved difficulty from localStorage if available
+    const savedDifficulty = localStorage.getItem("difficulty");
+    if (savedDifficulty) {
+      setDifficulty(savedDifficulty);
+    } else {
+      setDifficulty("easy"); // Default to "easy" if no saved difficulty
     }
   }, []);
 
@@ -70,9 +84,24 @@ const Settings = () => {
           <div className="difficulty-section">
             <h2 className="difficulty-title">Difficulty</h2>
             <div className="difficulty-buttons">
-              <button className="difficulty-button easy"></button>
-              <button className="difficulty-button medium"></button>
-              <button className="difficulty-button hard"></button>
+              <button
+                className={`difficulty-button easy ${difficulty === "easy" ? "selected" : ""}`}
+                onClick={() => handleDifficultyChange("easy")}
+              >
+                Easy
+              </button>
+              <button
+                className={`difficulty-button medium ${difficulty === "medium" ? "selected" : ""}`}
+                onClick={() => handleDifficultyChange("medium")}
+              >
+                Medium
+              </button>
+              <button
+                className={`difficulty-button hard ${difficulty === "hard" ? "selected" : ""}`}
+                onClick={() => handleDifficultyChange("hard")}
+              >
+                Hard
+              </button>
             </div>
           </div>
 

@@ -11,6 +11,20 @@
     cursor: pointer;
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
   }
+
+  .back-btttn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 180px; /* Adjusted for a better fit */
+    height: 80px; /* Adjusted for a better fit */
+    background: url("../assets/LogOut.png") no-repeat center center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  }
   
   /* Hover Effect */
   .back-bttn:hover {

@@ -10,6 +10,7 @@ import "../Components/Badge.css";
 const LeaderBoard = () => {
   const [username, setUsername] = useState("Player 1"); // State for username
   const [players, setPlayers] = useState([]); // State for leaderboard players
+  const [difficulty, setDifficulty] = useState("easy"); // State for selected difficulty
   const navigate = useNavigate(); // Define navigate
 
   useEffect(() => {
@@ -41,22 +42,26 @@ const LeaderBoard = () => {
     return () => unsubscribe();
   }, []);
 
-  // Fetch the top 5 players from Firestore
-  useEffect(() => {
-    const fetchTopPlayers = async () => {
-      const playersRef = collection(db, "scores");
-      const q = query(playersRef, orderBy("score", "desc"), limit(5));
-      const querySnapshot = await getDocs(q);
-      const topPlayers = querySnapshot.docs.map((doc, index) => ({
-        rank: index + 1,
-        name: doc.data().username,
-        score: doc.data().score,
-      }));
-      setPlayers(topPlayers);
-    };
+  // Fetch the top 5 players from Firestore based on difficulty
+  const fetchTopPlayers = async (difficulty) => {
+    const playersRef = collection(db, `scores_${difficulty}`);
+    const q = query(playersRef, orderBy("score", "desc"), limit(5));
+    const querySnapshot = await getDocs(q);
+    const topPlayers = querySnapshot.docs.map((doc, index) => ({
+      rank: index + 1,
+      name: doc.data().username,
+      score: doc.data().score,
+    }));
+    setPlayers(topPlayers);
+  };
 
-    fetchTopPlayers();
-  }, []);
+  useEffect(() => {
+    fetchTopPlayers(difficulty); // Fetch top players when the component mounts or difficulty changes
+  }, [difficulty]);
+
+  const handleDifficultyChange = (e) => {
+    setDifficulty(e.target.value);
+  };
 
   return (
     <div className="Container1">
@@ -68,7 +73,21 @@ const LeaderBoard = () => {
         {/* Leaderboard Box */}
         <div className="leaderboard-box">
           <h2 className="leaderboard-title">Leaderboard</h2>
-          
+
+          {/* Difficulty Dropdown */}
+          <div className="difficulty-dropdown">
+            <label htmlFor="difficulty-select">Difficulty: </label>
+            <select
+              id="difficulty-select"
+              value={difficulty}
+              onChange={handleDifficultyChange}
+            >
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+
           {/* Leaderboard Rows */}
           <div className="leaderboard-rows">
             {players.map((player) => (

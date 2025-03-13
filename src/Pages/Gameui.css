@@ -41,13 +41,13 @@
   margin-right: 15px;
   min-width: 140px;
   text-align: center;
-  right: 50px;
+  right: 12px;
 }
 
 /* Timer */
 .timer {
-  position: absolute;
-  bottom: -450px;
+  position: relative;
+  bottom: -400px;
   font-size: 30px;
   font-family: "Lilita One", sans-serif;
   font-weight: bold;
@@ -58,17 +58,41 @@
   margin-right: 15px;
   min-width: 140px;
   text-align: center;
-  right: 50px;
+  right: 12px;
 }
 
 .hearts {
   position: absolute;
   top: 150px; /* Adjust this value to position it under the timer */
-  right: 35px;
-  font-size:35px;
-  color: red;
+  right: 27px;
+  font-size: 30px;
+  color: rgb(255, 0, 0);
+  background: linear-gradient(180deg, #ffffff18 0%, #ffa01a22 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+  min-width: 200px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
 }
 
+/* Difficulty display styling */
+.difficulty {
+  position: relative;
+  bottom: -220px;
+  font-size: 30px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+  min-width: 140px;
+  text-align: center;
+  right: -260px;
+}
 
 .game-area {
   width: 50vw;
@@ -118,9 +142,6 @@
   background: #ffa500;
   color: white;
 }
-
-
-
 
 /* Timer turns red in last 30 seconds */
 .warning {

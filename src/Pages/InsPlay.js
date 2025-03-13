@@ -109,7 +109,7 @@ const InsPlay = () => {
 
         <button className="settings-button" onClick={handlesettings}></button>
 
-        <button className="back-bttn" onClick={handleSignInUp}></button>
+        <button className="back-btttn" onClick={handleSignInUp}></button>
         <button
           className="leaderboard-button"
           onClick={handleLeaderBoard}

@@ -12,7 +12,7 @@ import "../Components/Buttons.css";
 import "../Components/Badge.css";
 
 const Gameui = () => {
-  const [timeLeft, setTimeLeft] = useState(120); // 2 minutes countdown
+  const [timeLeft, setTimeLeft] = useState(300); // Default to 5 minutes
   const [isPaused, setIsPaused] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0); // Start score from 0
@@ -22,22 +22,45 @@ const Gameui = () => {
   const [feedback, setFeedback] = useState("");
   const [username, setUsername] = useState("Player 1"); // State for username
   const [incorrectAnswers, setIncorrectAnswers] = useState(0); // Track incorrect answers
+  const [maxIncorrectAnswers, setMaxIncorrectAnswers] = useState(5); // Default max incorrect answers
+  const [difficulty, setDifficulty] = useState("easy"); // Default difficulty level
 
   const navigate = useNavigate();
   const { playCorrectSound, playIncorrectSound } = useContext(SoundContext); // Use SoundContext
 
   useEffect(() => {
-    fetchQuestion(); // Fetch question when component mounts
+    // Fetch question when component mounts
+    fetchQuestion();
+
+    // Load the saved difficulty from localStorage and adjust settings
+    const savedDifficulty = localStorage.getItem("difficulty");
+    if (savedDifficulty) {
+      setDifficulty(savedDifficulty);
+      switch (savedDifficulty) {
+        case "medium":
+          setTimeLeft(180); // 3 minutes
+          setMaxIncorrectAnswers(5); // Default max incorrect answers
+          break;
+        case "hard":
+          setTimeLeft(120); // 2 minutes
+          setMaxIncorrectAnswers(3); // Reduce max incorrect answers to 3
+          break;
+        default:
+          setTimeLeft(300); // 5 minutes
+          setMaxIncorrectAnswers(5); // Default max incorrect answers
+          break;
+      }
+    }
   }, []);
 
   const handleGameOver = useCallback(async () => {
     const user = auth.currentUser;
     if (user) {
       // Save score when the game ends
-      await saveScore(user.uid, username, score); // Save the score for the user
+      await saveScore(user.uid, username, score, difficulty); // Save the score for the user with difficulty
     }
     setGameOver(true); // Set game over state
-  }, [score, username]);
+  }, [score, username, difficulty]);
 
   useEffect(() => {
     if (timeLeft > 0 && !isPaused) {
@@ -105,8 +128,8 @@ const Gameui = () => {
       setFeedback("Wrong! ❌ Try again.");
       setIncorrectAnswers((prev) => {
         const newCount = prev + 1;
-        if (newCount >= 5) {
-          handleGameOver(); // End game after 5 incorrect answers
+        if (newCount >= maxIncorrectAnswers) {
+          handleGameOver(); // End game after max incorrect answers
         }
         return newCount;
       });
@@ -120,7 +143,24 @@ const Gameui = () => {
 
   // Restart the game
   const handleRestart = () => {
-    setTimeLeft(120);
+    const savedDifficulty = localStorage.getItem("difficulty");
+    if (savedDifficulty) {
+      setDifficulty(savedDifficulty);
+      switch (savedDifficulty) {
+        case "medium":
+          setTimeLeft(180); // 3 minutes
+          setMaxIncorrectAnswers(5); // Default max incorrect answers
+          break;
+        case "hard":
+          setTimeLeft(120); // 2 minutes
+          setMaxIncorrectAnswers(3); // Reduce max incorrect answers to 3
+          break;
+        default:
+          setTimeLeft(300); // 5 minutes
+          setMaxIncorrectAnswers(5); // Default max incorrect answers
+          break;
+      }
+    }
     setIsPaused(false);
     setGameOver(false);
     setScore(0); // Reset score to 0
@@ -138,7 +178,7 @@ const Gameui = () => {
   // Generate heart emojis based on the number of incorrect answers
   const renderHearts = () => {
     const hearts = [];
-    for (let i = 0; i < 5 - incorrectAnswers; i++) {
+    for (let i = 0; i < maxIncorrectAnswers - incorrectAnswers; i++) {
       hearts.push("❤️");
     }
     return hearts.join(" ");
@@ -152,6 +192,7 @@ const Gameui = () => {
         </div>
 
         <div className="score-timer-container">
+          <div className="difficulty">Difficulty: {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</div>
           <div
             className={`timer ${timeLeft <= 30 ? "warning" : ""} ${
               timeLeft <= 10 ? "blink" : ""
@@ -166,10 +207,10 @@ const Gameui = () => {
           <div className="game-over">
             <h1>Game Over</h1>
             <button className="restart-btn" onClick={handleRestart}>
-             
+              Restart
             </button>
             <button className="home-btn" onClick={() => navigate("/InsPlay")}>
-             
+              Home
             </button>
           </div>
         ) : (
@@ -200,7 +241,7 @@ const Gameui = () => {
 
                 {/* Number Buttons */}
                 <div className="number-buttons">
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
+                  {[1, 2, 3, 4, 5, 6, 7, 0].map((num) => (
                     <button key={num} className="num-btn" onClick={() => handleAnswerClick(num)} disabled={isPaused}>
                       {num}
                     </button>
@@ -211,15 +252,15 @@ const Gameui = () => {
 
             <div className="sidebar">
               <button className={isPaused ? "resume-btn" : "pause-btn"} onClick={handlePauseResume}>
-                
+                {isPaused ? "Resume" : "Pause"}
               </button>
 
               <button className="home-btn" onClick={() => navigate("/InsPlay")}>
-             
+                Home
               </button>
 
               <button className="restart-btn" onClick={handleRestart}>
-             
+                Restart
               </button>
             </div>
 
