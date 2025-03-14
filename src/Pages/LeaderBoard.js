@@ -8,7 +8,7 @@ import "../Components/Buttons.css";
 import "../Components/Badge.css";
 
 //  ****************************************
-//  *         Code By @Sasaa_💀              *
+//  *         Code By @Sasaa_💀              ***
 //  ****************************************
 
 const LeaderBoard = () => {
