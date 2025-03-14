@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth"; // Import onAuthStateChanged
 import { doc, getDoc } from "firebase/firestore"; // Import Firestore functions
 import { auth, db } from "../firebase/firebaseConfig"; // Import auth and db from firebaseConfig
@@ -30,6 +30,7 @@ const Gameui = () => {
   const [difficulty, setDifficulty] = useState("easy"); // Default difficulty level
 
   const navigate = useNavigate();
+  const location = useLocation();
   const { playCorrectSound, playIncorrectSound } = useContext(SoundContext); // Use SoundContext
 
   useEffect(() => {
@@ -55,12 +56,36 @@ const Gameui = () => {
           break;
       }
     }
-  }, []);
+
+    // Set username from location state if available
+    const guestUsername = location.state?.username;
+    if (guestUsername) {
+      setUsername(guestUsername);
+    } else {
+      const fetchUsername = async (user) => {
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
+        }
+      };
+
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          fetchUsername(user);
+        } else {
+          setUsername("Player 1");
+        }
+      });
+
+      return () => unsubscribe();
+    }
+  }, [location.state]);
 
   const handleGameOver = useCallback(async () => {
     const user = auth.currentUser;
-    if (user) {
-      // Save score when the game ends
+    if (user && username !== "Guest001") {
+      // Save score when the game ends, but not for guest users
       await saveScore(user.uid, username, score, difficulty); // Save the score for the user with difficulty
     }
     setGameOver(true); // Set game over state
@@ -93,27 +118,6 @@ const Gameui = () => {
     }
   };
 
-  // Fetch the username from Firestore
-  useEffect(() => {
-    const fetchUsername = async (user) => {
-      const userDoc = await getDoc(doc(db, "users", user.uid));
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
-      }
-    };
-
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUsername(user);
-      } else {
-        setUsername("Player 1");
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
   // Handle user answer selection
   const handleAnswerClick = (num) => {
     if (isPaused) return; // Do nothing if the game is paused
@@ -126,10 +130,13 @@ const Gameui = () => {
       setTimeout(() => {
         setFeedback("");
         fetchQuestion(); // Fetch a new question after clearing feedback
-      }, 500); // Adjust the delay as needed
+      }, 1000); // Clear feedback after 1 second
     } else {
       playIncorrectSound(); // Play incorrect answer sound
       setFeedback("Wrong! ❌ Try again.");
+      setTimeout(() => {
+        setFeedback("");
+      }, 1000); // Clear feedback after 1 second
       setIncorrectAnswers((prev) => {
         const newCount = prev + 1;
         if (newCount >= maxIncorrectAnswers) {
@@ -213,7 +220,7 @@ const Gameui = () => {
             <button className="restart-btn" onClick={handleRestart}>
               Restart
             </button>
-            <button className="home-btn" onClick={() => navigate("/InsPlay")}>
+            <button className="home-btn" onClick={() => navigate("/InsPlay", { state: { username } })}>
               Home
             </button>
           </div>
@@ -256,15 +263,15 @@ const Gameui = () => {
 
             <div className="sidebar">
               <button className={isPaused ? "resume-btn" : "pause-btn"} onClick={handlePauseResume}>
-                {isPaused ? "Resume" : "Pause"}
+               
               </button>
 
-              <button className="home-btn" onClick={() => navigate("/InsPlay")}>
-                Home
+              <button className="home-btn" onClick={() => navigate("/InsPlay", { state: { username } })}>
+                
               </button>
 
               <button className="restart-btn" onClick={handleRestart}>
-                Restart
+                
               </button>
             </div>
 

@@ -13,7 +13,6 @@ import "../Components/Badge.css";
 //  *         Code By @Sasaa_💀              *
 //  ****************************************
 
-
 const InsPlay = () => {
   const [username, setUsername] = useState("Player 1"); // State for username
   const navigate = useNavigate();
@@ -53,14 +52,14 @@ const InsPlay = () => {
 
   // Handlers for navigation buttons
   const handlesettings = () => {
-    navigate("/Setting");
+    navigate("/Setting", { state: { username } });
   };
 
   const handleLeaderBoard = () => {
-    navigate("/LeaderBoard");
+    navigate("/LeaderBoard", { state: { username } });
   };
   const handleGameUi = () => {
-    navigate("/GameUi");
+    navigate("/GameUi", { state: { username } }); // Pass the username to GameUi
   };
 
   const handleSignInUp = () => {

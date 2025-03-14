@@ -10,7 +10,6 @@ import "../Components/Badge.css";
 //  *         Code By @Sasaa_💀             *
 //  ****************************************
 
-
 const SignInOut = () => {
   const navigate = useNavigate();
 
@@ -23,7 +22,7 @@ const SignInOut = () => {
   };
 
   const handleGuest = () => {
-    navigate("/insplay"); // Navigate to a guest page
+    navigate("/insplay", { state: { username: "Guest001" } }); // Navigate to a guest page with guest username
   };
 
   useEffect(() => {

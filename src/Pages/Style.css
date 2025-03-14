@@ -772,7 +772,6 @@
 .guest-button {
   width: 220px; 
   height: 90px;
-
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -782,12 +781,10 @@
   transition: transform 0.2s ease-in-out;
   margin-top: 20px;
   border-radius: 40px;
-
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .signin-button {
   background-image: url("../assets/Sign In.png"); 
 }
@@ -808,5 +805,4 @@
 .signup-button:hover,
 .guest-button:hover {
   transform: scale(1.05);
-  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.601);
 }

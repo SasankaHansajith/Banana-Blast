@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate and useLocation
 import { onAuthStateChanged } from "firebase/auth"; // Import onAuthStateChanged
 import { collection, query, orderBy, limit, getDocs, doc, getDoc } from "firebase/firestore"; // Import Firestore functions
 import { auth, db } from "../firebase/firebaseConfig"; // Import auth and db from firebaseConfig
@@ -11,12 +11,12 @@ import "../Components/Badge.css";
 //  *         Code By @Sasaa_💀              *
 //  ****************************************
 
-
 const LeaderBoard = () => {
   const [username, setUsername] = useState("Player 1"); // State for username
   const [players, setPlayers] = useState([]); // State for leaderboard players
   const [difficulty, setDifficulty] = useState("easy"); // State for selected difficulty
   const navigate = useNavigate(); // Define navigate
+  const location = useLocation(); // Define location
 
   useEffect(() => {
     // Apply brightness effect when the component mounts
@@ -26,26 +26,31 @@ const LeaderBoard = () => {
     }
   }, []);
 
-  // Fetch the username from Firestore
+  // Fetch the username from Firestore or use guest username
   useEffect(() => {
-    const fetchUsername = async (user) => {
-      const userDoc = await getDoc(doc(db, "users", user.uid));
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
-      }
-    };
+    const guestUsername = location.state?.username;
+    if (guestUsername) {
+      setUsername(guestUsername);
+    } else {
+      const fetchUsername = async (user) => {
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          setUsername(userData.username.substring(0, 9)); // Limit username to 9 characters
+        }
+      };
 
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUsername(user);
-      } else {
-        setUsername("Player 1");
-      }
-    });
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          fetchUsername(user);
+        } else {
+          setUsername("Player 1");
+        }
+      });
 
-    return () => unsubscribe();
-  }, []);
+      return () => unsubscribe();
+    }
+  }, [location.state]);
 
   // Fetch the top 5 players from Firestore based on difficulty
   const fetchTopPlayers = async (difficulty) => {
@@ -106,7 +111,7 @@ const LeaderBoard = () => {
         </div>
 
         {/* Back Button */}
-        <button className="back-bttn" onClick={() => navigate("/InsPlay")}></button>
+        <button className="back-bttn" onClick={() => navigate("/InsPlay", { state: { username } })}></button>
       </div>
     </div>
   );
