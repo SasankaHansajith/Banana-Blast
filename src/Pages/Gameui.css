@@ -6,9 +6,9 @@
   height: 90vh;
   max-height: 900px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Change to row to align items horizontally */
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Space between elements */
   position: relative;
   border-radius: 20px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
@@ -30,68 +30,62 @@
 
 .score {
   position: absolute;
-  bottom: -300px;
-  font-size: 30px;
-  font-family: "Lilita One", sans-serif;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  margin-right: 15px;
-  min-width: 140px;
-  text-align: center;
-  right: 12px;
-}
-
-/* Timer */
-.timer {
-  position: relative;
-  bottom: -400px;
-  font-size: 30px;
-  font-family: "Lilita One", sans-serif;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  margin-right: 15px;
-  min-width: 140px;
-  text-align: center;
-  right: 12px;
-}
-
-.hearts {
-  position: absolute;
-  top: 150px; /* Adjust this value to position it under the timer */
   right: 27px;
-  font-size: 30px;
-  color: rgb(255, 0, 0);
-  background: linear-gradient(180deg, #ffffff18 0%, #ffa01a22 100%);
+  top: 280px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   margin-right: 15px;
   min-width: 200px;
   text-align: center;
+  
+}
+
+/* Timer */
+.timer {
+  position: absolute;
   font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+  min-width: 200px;
+  text-align: center;
+  right: 27px;
+  top: 200px;
+  
+}
+
+.hearts {
+  position: absolute;
+  top: 120px; /* Adjust this value to position it under the timer */
+  right: 27px;
+  color: rgb(255, 0, 0);
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+  min-width: 200px;
+  text-align: center;
   padding: 10px 20px;
   border-radius: 30px;
 }
 
 /* Difficulty display styling */
 .difficulty {
-  position: relative;
-  bottom: -220px;
-  font-size: 30px;
-  font-family: "Lilita One", sans-serif;
-  font-weight: bold;
+
+  position: absolute;
+  right: 27px;
+  top: 360px;
   padding: 10px 20px;
   border-radius: 30px;
   background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   margin-right: 15px;
-  min-width: 140px;
+  min-width: 200px;
   text-align: center;
-  right: -260px;
+  
 }
 
 .game-area {
@@ -105,6 +99,10 @@
   align-items: center;
   justify-content: center;
   margin-top: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .question-image {
@@ -326,8 +324,78 @@
   font-family: "Lilita One", sans-serif;
   font-weight: bold;
   color: red;
-  background: rgba(255, 255, 255, 0.8);
   padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff18 0%, #ff9f1a 100%);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+  min-width: 200px;
+  text-align: center;
+  left: 40%;
+  top: 90%;
+}
+
+/* New Box for Score, Timer, Hearts, and Difficulty */
+.status-box {
+  width: 90vw;
+  max-width: 300px;
+  height: 90vh;
+  max-height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.637);
+  border-radius: 20px;
+  border: 5px;
+  border-style:outset;
+  border-color: #ffa01a5f;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 20px; /* Position it to the right */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%); /* Adjust for centering */
+}
+
+.status-box .difficulty,
+.status-box .timer,
+.status-box .score,
+.status-box .hearts {
+  margin: 10px 0;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Lilita One", sans-serif;
+  border: 3px;
+  border-style:outset;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .status-box {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .status-box .difficulty,
+  .status-box .timer,
+  .status-box .score,
+  .status-box .hearts {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-box {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .status-box .difficulty,
+  .status-box .timer,
+  .status-box .score,
+  .status-box .hearts {
+    font-size: 14px;
+  }
 }

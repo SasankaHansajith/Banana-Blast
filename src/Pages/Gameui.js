@@ -106,7 +106,10 @@ const Gameui = () => {
   const fetchQuestion = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://api.allorigins.win/get?url=" + encodeURIComponent("http://marcconrad.com/uob/banana/api.php"));
+      const response = await axios.get(
+        "https://api.allorigins.win/get?url=" +
+          encodeURIComponent("http://marcconrad.com/uob/banana/api.php")
+      );
       const data = JSON.parse(response.data.contents);
       console.log("API response:", data); // Log the API response for debugging
       setQuestionImage(data.question); // Store image URL
@@ -126,7 +129,7 @@ const Gameui = () => {
       playCorrectSound(); // Play correct answer sound
       setScore((prevScore) => prevScore + 50); // Increase score by 50 points on correct answer
       setTimeLeft((prevTime) => prevTime + 20); // Add 20 seconds to the timer
-      setFeedback("Correct! 🎉");
+      setFeedback("Correct! 🎉         ");
       setTimeout(() => {
         setFeedback("");
         fetchQuestion(); // Fetch a new question after clearing feedback
@@ -202,8 +205,12 @@ const Gameui = () => {
           <span className="playername">{username}</span>
         </div>
 
-        <div className="score-timer-container">
-          <div className="difficulty">Difficulty: {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</div>
+        {/* New Box for Score, Timer, Hearts, and Difficulty */}
+        <div className="status-box">
+          <div className="difficulty">
+            Difficulty:{" "}
+            {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
+          </div>
           <div
             className={`timer ${timeLeft <= 30 ? "warning" : ""} ${
               timeLeft <= 10 ? "blink" : ""
@@ -212,17 +219,17 @@ const Gameui = () => {
             Time Left: <span>{formatTime(timeLeft)}</span>
           </div>
           <div className="score">Score: {score}</div>
+          <div className="hearts">{renderHearts()}</div>
         </div>
 
         {gameOver ? (
           <div className="game-over">
             <h1>Game Over</h1>
-            <button className="restart-btn" onClick={handleRestart}>
-              Restart
-            </button>
-            <button className="home-btn" onClick={() => navigate("/InsPlay", { state: { username } })}>
-              Home
-            </button>
+            <button className="restart-btn" onClick={handleRestart}></button>
+            <button
+              className="home-btn"
+              onClick={() => navigate("/InsPlay", { state: { username } })}
+            ></button>
           </div>
         ) : (
           <>
@@ -244,7 +251,7 @@ const Gameui = () => {
                         objectFit: "contain",
                         border: "2px solid #ccc",
                         borderRadius: "10px",
-                        marginBottom: "10px"
+                        marginBottom: "10px",
                       }}
                     />
                   </>
@@ -252,8 +259,13 @@ const Gameui = () => {
 
                 {/* Number Buttons */}
                 <div className="number-buttons">
-                  {[1, 2, 3, 4, 5, 6, 7, 0].map((num) => (
-                    <button key={num} className="num-btn" onClick={() => handleAnswerClick(num)} disabled={isPaused}>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
+                    <button
+                      key={num}
+                      className="num-btn"
+                      onClick={() => handleAnswerClick(num)}
+                      disabled={isPaused}
+                    >
                       {num}
                     </button>
                   ))}
@@ -262,24 +274,21 @@ const Gameui = () => {
             </div>
 
             <div className="sidebar">
-              <button className={isPaused ? "resume-btn" : "pause-btn"} onClick={handlePauseResume}>
-               
-              </button>
+              <button
+                className={isPaused ? "resume-btn" : "pause-btn"}
+                onClick={handlePauseResume}
+              ></button>
 
-              <button className="home-btn" onClick={() => navigate("/InsPlay", { state: { username } })}>
-                
-              </button>
+              <button
+                className="home-btn"
+                onClick={() => navigate("/InsPlay", { state: { username } })}
+              ></button>
 
-              <button className="restart-btn" onClick={handleRestart}>
-                
-              </button>
+              <button className="restart-btn" onClick={handleRestart}></button>
             </div>
 
             {/* Feedback Message */}
             {feedback && <div className="feedback">{feedback}</div>}
-
-            {/* Hearts Indicator */}
-            <div className="hearts">{renderHearts()}</div>
           </>
         )}
       </div>

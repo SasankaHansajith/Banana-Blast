@@ -54,7 +54,8 @@
   font-size: 12px; /* Smaller font size */
   margin-top: 10px;
 }
--------------------------------------------- .instructions-bbox {
+--------------------------------------------
+.instructions-bbox {
   width: 500px; /* Scales dynamically */
   max-width: 1000px;
   height: 500px; /* Reduced height slightly for balance */
@@ -291,6 +292,93 @@
 
 .volume-slider::-ms-thumb:hover {
   transform: scale(1.2); 
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .instructions-bbox {
+    width: 80%;
+    height: auto;
+  }
+
+  .instructions-bbox h2 {
+    font-size: 50px;
+  }
+
+  .instructions-bbox p {
+    font-size: 20px;
+  }
+
+  .play-button {
+    width: 200px;
+    height: 90px;
+  }
+
+  .settings-button {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 180px;
+  }
+
+  .leaderboard-button {
+    width: 150px;
+    height: 60px;
+  }
+
+  .mute-buttton .mute-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .volume-slider {
+    width: 100px;
+    bottom: 35px;
+    left: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructions-bbox {
+    width: 90%;
+    height: auto;
+  }
+
+  .instructions-bbox h2 {
+    font-size: 40px;
+  }
+
+  .instructions-bbox p {
+    font-size: 18px;
+  }
+
+  .play-button {
+    width: 150px;
+    height: 70px;
+  }
+
+  .settings-button {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    left: 150px;
+  }
+
+  .leaderboard-button {
+    width: 120px;
+    height: 50px;
+  }
+
+  .mute-buttton .mute-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .volume-slider {
+    width: 80px;
+    bottom: 25px;
+    left: 250px;
+  }
 }
 
 /* ==============SignIn Page =======================================================*/
@@ -751,26 +839,24 @@
 .signin-box {
   width: 60%;
   max-width: 400px;
-  height: 60vh;
-  max-height: 320px;
+  height: auto;
   border-radius: 55px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   padding: 20px;
 }
+
 /* Buttons */
 .signin-button,
 .signup-button,
 .guest-button {
-  width: 220px; 
+  width: 220px;
   height: 90px;
   background-color: transparent;
   border: none;
@@ -785,19 +871,45 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .signin-button {
-  background-image: url("../assets/Sign In.png"); 
+  background-image: url("../assets/Sign In.png");
 }
 
 .signup-button {
-  background-image: url("../assets/SignUp.png"); 
+  background-image: url("../assets/SignUp.png");
 }
 
 .guest-button {
-  background-image: url("../assets/Guest btn.png"); 
+  background-image: url("../assets/Guest btn.png");
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .signin-box {
+    width: 80%;
+  }
 
+  .signin-button,
+  .signup-button,
+  .guest-button {
+    width: 180px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-box {
+    width: 90%;
+  }
+
+  .signin-button,
+  .signup-button,
+  .guest-button {
+    width: 150px;
+    height: 60px;
+  }
+}
 /* Author: @Sasanka */
 
 
