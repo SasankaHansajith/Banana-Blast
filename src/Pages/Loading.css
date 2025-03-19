@@ -1,78 +1,41 @@
-/* Background Styling */
-/* .background {
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #6bcb77, #45a049);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  } */
 
-.background {
-  position: fixed; /* Ensures the background covers the entire screen */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-
-  /* background-image: url("../assets/Loading.png"); /* ✅ Works if inside 'src/assets/' */
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Loading Content */
+/* Loading content styling */
 .loading-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.634);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Title Styling */
-.loading-title {
-  font-family: Lilita One;
-  font-size: 4rem;
-  font-weight: bold;
-  color: #ffd700;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Loading Bar Container */
+/* Loading bar container */
 .loading-bar-container {
-  position: relative;
-  width: 600px;
-  height: 25px;
-  background-color: rgba(12, 12, 12, 0.384);
-  border-radius: 15px;
+  width: 700px;
+  max-width: 700px;
+  height: 35px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
   overflow: hidden;
-  border: 5px solid #000000;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Animated Loading Bar */
+/* Loading bar */
 .loading-bar {
   height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, #ff0000, #ffcc00);
-  transition: width 5s linear;
+  background: linear-gradient(to right, #ff9f1a, #ff0000);
+  transition: width 0.1s ease-in-out;
 }
 
-/* Loading Text */
+/* Loading text */
 .loading-text {
-  margin-top: 10px;
-  font-size: 1.5rem;
+  font-family: "Lilita One", sans-serif;
+  font-size: 26px;
   font-weight: bold;
-  font-family: "Lilita One";
   color: #0a2c51;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }

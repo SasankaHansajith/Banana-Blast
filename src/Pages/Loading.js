@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Loading.css";
-import "../Components/Container.css";
+import "../Components/Container.css"; // Ensure this is consistent with other pages
 
 //  ****************************************
 //  *         Code By @Sasaa_💀              *
 //  ****************************************
-
 
 export default function Loading() {
   const [progress, setProgress] = useState(0);

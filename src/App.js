@@ -19,8 +19,8 @@ function App() {
     <SoundProvider>
       <Router>
         <Routes>
-          {/* Default route to Login page */}
-          <Route path="/" element={<Login />} />
+          {/* Default route to Loading page */}
+          <Route path="/" element={<Loading />} />
           {/* Explicit route for /login */}
           <Route path="/login" element={<Login />} />
           {/* Other routes */}
