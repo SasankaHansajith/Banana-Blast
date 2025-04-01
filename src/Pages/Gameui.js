@@ -204,12 +204,11 @@ const Gameui = () => {
         <div className="playerbadge">
           <span className="playername">{username}</span>
         </div>
-
+  
         {/* New Box for Score, Timer, Hearts, and Difficulty */}
         <div className="status-box">
           <div className="difficulty">
-            Difficulty:{" "}
-            {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
+            Difficulty: {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
           </div>
           <div
             className={`timer ${timeLeft <= 30 ? "warning" : ""} ${
@@ -221,7 +220,7 @@ const Gameui = () => {
           <div className="score">Score: {score}</div>
           <div className="hearts">{renderHearts()}</div>
         </div>
-
+  
         {gameOver ? (
           <div className="game-over">
             <h1>Game Over</h1>
@@ -234,59 +233,65 @@ const Gameui = () => {
         ) : (
           <>
             <div className="header">
-              <div className="game-area">
-                {loading ? (
-                  <p>Loading Question...</p>
-                ) : (
-                  <>
-                    <img
-                      src={questionImage}
-                      alt="Game Question"
-                      className="question-image"
-                      style={{
-                        width: "70%",
-                        height: "auto",
-                        maxWidth: "700px",
-                        maxHeight: "700px",
-                        objectFit: "contain",
-                        border: "2px solid #ccc",
-                        borderRadius: "10px",
-                        marginBottom: "10px",
-                      }}
-                    />
-                  </>
-                )}
-
-                {/* Number Buttons */}
-                <div className="number-buttons">
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
-                    <button
-                      key={num}
-                      className="num-btn"
-                      onClick={() => handleAnswerClick(num)}
-                      disabled={isPaused}
-                    >
-                      {num}
-                    </button>
-                  ))}
+              {!isPaused ? (
+                <div className="game-area">
+                  {loading ? (
+                    <p>Loading Question...</p>
+                  ) : (
+                    <>
+                      <img
+                        src={questionImage}
+                        alt="Game Question"
+                        className="question-image"
+                        style={{
+                          width: "70%",
+                          height: "auto",
+                          maxWidth: "700px",
+                          maxHeight: "700px",
+                          objectFit: "contain",
+                          border: "2px solid #ccc",
+                          borderRadius: "10px",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    </>
+                  )}
+  
+                  {/* Number Buttons */}
+                  <div className="number-buttons">
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
+                      <button
+                        key={num}
+                        className="num-btn"
+                        onClick={() => handleAnswerClick(num)}
+                        disabled={isPaused}
+                      >
+                        {num}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="paused-message">
+                  <h2>Game Paused</h2>
+                </div>
+              )}
             </div>
-
+  
             <div className="sidebar">
               <button
                 className={isPaused ? "resume-btn" : "pause-btn"}
                 onClick={handlePauseResume}
               ></button>
-
+  
               <button
                 className="home-btn"
                 onClick={() => navigate("/InsPlay", { state: { username } })}
               ></button>
-
+  
               <button className="restart-btn" onClick={handleRestart}></button>
             </div>
-
+  
             {/* Feedback Message */}
             {feedback && <div className="feedback">{feedback}</div>}
           </>

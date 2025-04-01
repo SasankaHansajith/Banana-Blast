@@ -316,6 +316,44 @@
   filter: brightness(1.2);
 }
 
+/* Center the paused message in the middle of the page */
+.paused-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: bold;
+  color: #ff9f1a;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Style for the pause button inside the paused message */
+.paused-message .resume-btn {
+  margin-top: 20px;
+  width: 200px;
+  height: 80px;
+  background: url("../assets/resumebtn.png") no-repeat center center;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.paused-message .resume-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
 /* Feedback Message */
 .feedback {
   position: absolute;
@@ -399,3 +437,4 @@
     font-size: 14px;
   }
 }
+
